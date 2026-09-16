@@ -1,28 +1,58 @@
+/* #region 1. VÁLTOZÓK ÉS ALAP BEÁLLÍTÁSOK */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-:root{
-    --text-dark:#171717;
-    --text-light:#525252;
-    --exta-light:#a3a3a3;
-    --white:#ffffff;
-    --max-width:1200px;
-    --header-font:"Merriweather", serif;
+:root {
+    --text-dark: #171717;
+    --text-light: #525252;
+    --exta-light: #a3a3a3;
+    --white: #ffffff;
+    --gold: #d4af37;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
 }
 
 * {
-    padding:0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
 
-.section__container{
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    display: flex;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+/* #endregion */
+
+/* #region 2. ÁLTALÁNOS OSZTÁLYOK ÉS GOMBOK */
+.section__container {
     max-width: var(--max-width);
     margin: auto;
     padding: 5rem 1rem;
 }
-.section__header{
+
+.section__header {
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: 400;
@@ -31,14 +61,14 @@
     text-align: center;
 }
 
-.section__description{
+.section__description {
     color: var(--text-light);
     line-height: 1.75rem;
     text-align: center;
 }
 
-.btn{
-    padding: .75rem 1.5rem;
+.btn {
+    padding: 0.75rem 1.5rem;
     outline: none;
     border: none;
     font-size: 1rem;
@@ -46,38 +76,28 @@
     color: var(--white);
     background-color: var(--text-dark);
     border-radius: 5px;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
 }
 
-.btn:hover{
-    background-color:var(--exta-light);
+.btn:hover {
+    background-color: var(--exta-light);
 }
 
-img{
-    display: flex;
-    width: 100%; 
+/* Kattintáskor a menü nem takarja ki a tartalmat */
+#about,
+#service,
+#client,
+#blog,
+#contact {
+    scroll-margin-top: 90px;
 }
+/* #endregion */
 
-
-a{
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-html,
-body{
-    scroll-behavior: smooth;
-}
-
-body{
-    font-family: "Montserrat", sans-serif;
-}
-
-
-.header{
+/* #region 3. HEADER ÉS NAVIGÁCIÓ */
+.header {
     min-height: 600px;
-    background-image: radial-gradient(rgba(255,255,255,0), rgba(0,0,0,.9)), url("Picture/20221008-2.JPG");
+    background-image: radial-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9)), url("Picture/20221008-2.JPG");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -85,16 +105,21 @@ body{
 
 nav {
     position: fixed;
-    isolation: isolate;
     top: 0;
-    left: 0;   /* Ezt add hozzá! */
-    right: 0;  /* Ezt add hozzá! */
+    left: 0;
     width: 100%;
-    /* A max-width és margin auto sorokat töröld ki innen, ha még bent lennének */
-    z-index: 9;
+    z-index: 99;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nav__header{
+/* JavaScript adja hozzá görgetéskor */
+nav.nav--scrolled {
+    background-color: var(--text-dark);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav__header {
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -103,18 +128,17 @@ nav {
     background-color: var(--text-dark);
 }
 
-.nav__logo{
+.nav__logo {
     max-width: 150px;
 }
 
-
-.nav__menu_btn{
+.nav__menu_btn {
     font-size: 1.5rem;
     color: var(--white);
     cursor: pointer;
 }
 
-.nav__links{
+.nav__links {
     list-style: none;
     position: absolute;
     width: 100%;
@@ -125,15 +149,15 @@ nav {
     gap: 2rem;
     background-color: var(--text-dark);
     transform: translateY(-100%);
-    transition: .5s;
+    transition: 0.5s;
     z-index: -1;
 }
 
-.nav__links.open{
+.nav__links.open {
     transform: translateY(0);
 }
 
-.nav__links .nav__logo{
+.nav__links .nav__logo {
     display: none;
 }
 
@@ -144,41 +168,37 @@ nav {
     border-bottom: 2px solid transparent;
 }
 
-
-.nav__links a:hover{
-    border-color: var(--white);   
+.nav__links a:hover {
+    border-color: var(--white);
 }
+/* #endregion */
 
-.about__container .section__description{
+/* #region 4. RÓLUNK SZEKCIÓ (ABOUT) */
+.about__container .section__description {
     max-width: 900px;
     margin-inline: auto;
     margin-bottom: 2rem;
 }
 
-.about__container img{
+.about__container img {
     max-width: 300px;
     margin-inline: auto;
 }
+/* #endregion */
 
-
-
-
-
-
-
-
-
-.portfolio__grid{
+/* #region 5. PORTFÓLIÓ SZEKCIÓ (PORTFOLIO) */
+.portfolio__grid {
     margin-top: 2rem;
-    display:  grid;
+    display: grid;
     gap: 1rem;
 }
 
-.portfolio__card{
+.portfolio__card {
     position: relative;
     isolation: isolate;
 }
-.portfolio__card::after{
+
+.portfolio__card::after {
     position: absolute;
     bottom: 2rem;
     left: 25%;
@@ -188,18 +208,19 @@ nav {
     color: var(--white);
 }
 
-.portfolio__card:nth-child(1)::after{
+.portfolio__card:nth-child(1)::after {
     content: "Party";
 }
 
-.portfolio__card:nth-child(2)::after{
+.portfolio__card:nth-child(2)::after {
     content: "Football";
 }
-.portfolio__card:nth-child(3)::after{
+
+.portfolio__card:nth-child(3)::after {
     content: "Wedding";
 }
 
-.portfolio__content{
+.portfolio__content {
     position: absolute;
     top: 0;
     left: 0;
@@ -208,51 +229,46 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transition: .3s;
+    transition: 0.3s;
     z-index: 1;
 }
-.portfolio__card:hover .portfolio__content{
+
+.portfolio__card:hover .portfolio__content {
     opacity: 1;
 }
- 
+/* #endregion */
 
-
-
-
-
-
-
-
-.service{
-    background-image: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)), url("Picture/20221008-2.JPG");
+/* #region 6. SZOLGÁLTATÁSOK SZEKCIÓ (SERVICES) */
+.service {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("Picture/20221008-2.JPG");
     background-position: center center;
-    background-size:  cover;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
-.service__container .section__header{
+.service__container .section__header {
     color: var(--white);
 }
 
-.service__container .section__descripiton{
+.service__container .section__descripiton {
     max-width: 600px;
     margin-inline: auto;
     color: var(--exta-light);
 }
 
-.service__grid{
+.service__grid {
     margin-top: 4rem;
     display: grid;
     gap: 2rem;
 }
 
-.service__card{
+.service__card {
     text-align: center;
 }
 
-.service__card h4{
+.service__card h4 {
     position: relative;
     isolation: isolate;
     margin-bottom: 1rem;
@@ -263,8 +279,7 @@ nav {
     color: var(--white);
 }
 
-
-.service__card h4::after{
+.service__card h4::after {
     position: absolute;
     content: "~";
     bottom: 0;
@@ -274,112 +289,98 @@ nav {
     line-height: 0;
 }
 
-
-.service__card p{
+.service__card p {
     color: var(--exta-light);
     line-height: 1.75rem;
 }
+/* #endregion */
 
-
-
-
-
-
-
-
-
-.client__container{
+/* #region 7. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS / SWIPER) */
+.client__container {
     padding-bottom: 2rem;
 }
 
-.swiper{
+.swiper {
     margin-top: 2rem;
     padding-bottom: 3rem;
     width: 100%;
 }
 
-.client__card{
+.client__card {
     max-width: 900px;
     margin-inline: auto;
     text-align: center;
 }
 
-.client__card img{
+.client__card img {
     max-width: 120px;
-    margin-inline: auto ;
+    margin-inline: auto;
     margin-bottom: 2rem;
     border-radius: 100%;
-    box-shadow: 5px 5px 20px rgba(0,0,0, 0.2);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.client__card p{
+.client__card p {
     margin-bottom: 1rem;
     color: var(--text-light);
     line-height: 1.75rem;
 }
-.client__card h4{
+
+.client__card h4 {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-dark);
 }
 
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
     background-color: var(--text-dark);
 }
+/* #endregion */
 
-
-
-
-
-
-
-.gallery__grid{
+/* #region 8. GALÉRIA SZEKCIÓ (GALLERY) */
+.gallery__grid {
     margin-block: 2rem;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
 }
 
-
-.gallery__grid img{
+.gallery__grid img {
     transition: 0.3s;
 }
 
-.gallery__grid:hover img:not(:hover){
+.gallery__grid:hover img:not(:hover) {
     opacity: 0.5;
 }
 
-.gallery__btn{
+.gallery__btn {
     text-align: center;
 }
+/* #endregion */
 
-
-
-
-
-
-
-
-.blog{
-    background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("Picture/blog.JPG");
+/* #region 9. BLOG SZEKCIÓ (BLOG) */
+.blog {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("Picture/blog.JPG");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-.blog__container{
+.blog__container {
     padding-bottom: 8rem;
     display: grid;
 }
-.blog__content{
+
+.blog__content {
     text-align: center;
 }
-.blog__content .section__header{
+
+.blog__content .section__header {
     margin-bottom: 2rem;
-    color:var(--white);
+    color: var(--white);
 }
 
-.blog__content h4{
+.blog__content h4 {
     margin-bottom: 1rem;
     font-size: 1.25rem;
     font-weight: 400;
@@ -387,52 +388,156 @@ nav {
     color: var(--white);
 }
 
-.blog__content p{
+.blog__content p {
     margin-bottom: 2rem;
     line-height: 1.75rem;
     color: var(--exta-light);
 }
 
-.blog__content .btn{
+.blog__content .btn {
     background-color: transparent;
     border: 1px solid var(--white);
 }
+/* #endregion */
 
+/* #region 10. LÁBLÉC ÉS ELÉRHETŐSÉG (FOOTER & CONTACT) */
+.footer {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 60px;
+    margin-bottom: 0;
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 60px 20px 20px;
+    box-sizing: border-box;
+    display: block;
+}
 
+.footer__container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
 
-@media (width>540px){
-    .portfolio__grid{
+.footer__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.footer__logo img {
+    width: 220px;
+    height: auto;
+}
+
+.footer__container h3 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--white);
+    text-align: center;
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: space-between; /* Az első és utolsó ikont kitolja a szélekre */
+    align-items: center;
+    width: 260px;                  /* Pontosan megegyezik a szöveg szélességével */
+    margin: 0 auto 30px;
+}
+
+.footer__socials a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.footer__socials a:hover {
+    background-color: var(--gold);
+    color: #111111;
+    transform: translateY(-3px);
+}
+
+.footer__contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 35px;
+}
+
+.footer__contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 1rem;
+    color: var(--exta-light);
+}
+
+.footer__contact i {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.footer__copyright {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #888888;
+    font-size: 0.85rem;
+}
+/* #endregion */
+
+/* #region 11. RESZPONZÍV NÉZETEK (MEDIA QUERIES) */
+@media (width > 540px) {
+    .portfolio__grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .service__grid{
-        grid-template-columns: repeat(2,1fr);
+    .service__grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .gallery__grid{
+    .gallery__grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-
-@media(width>768px){
-    .header{
+@media (width > 768px) {
+    .header {
         min-height: 650px;
     }
-    .nav{
-        padding: 2rem 1rem;
-        position: static;
-        max-width: 900px;
+
+    nav {
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    .nav__header{
+    .nav__header {
         display: none;
     }
 
-    .nav__links{
-        padding:0;
+    .nav__links {
+        padding: 0;
         width: 100%;
         position: static;
         transform: none;
@@ -441,41 +546,41 @@ nav {
         background-color: transparent;
     }
 
-    .nav__links .nav__logo{
+    .nav__links .nav__logo {
         display: block;
     }
-    .nav__links .nav__logo img{
+
+    .nav__links .nav__logo img {
         max-width: 150px;
     }
 
-    .portfolio__grid{
-        grid-template-columns: repeat(3,1fr);
-    }
-
-    .service__grid{
+    .portfolio__grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .gallery__grid{
+    .service__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery__grid {
         grid-template-columns: repeat(4, 1fr);
     }
 
-
-    .blog__container{
-        grid-template-columns: repeat(2,1fr);
+    .blog__container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .blog__content{
+    .blog__content {
         grid-column: 2/3;
     }
 }
 
-
-@media (width>1024){
-    .header{
+@media (width > 1024px) {
+    .header {
         min-height: 700px;
     }
-    .portfolio__grid{
+    .portfolio__grid {
         gap: 2rem;
     }
 }
+/* #endregion */

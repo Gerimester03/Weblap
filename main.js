@@ -2,6 +2,16 @@ const menuBtn=document.getElementById("menu-btn")
 const navLinks=document.getElementById("nav-links")
 const menuBtnIcon=menuBtn.querySelector("i")
 
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        nav.classList.add("nav--scrolled");
+    } else {
+        nav.classList.remove("nav--scrolled");
+    }
+});
+
 menuBtn.addEventListener("click", (e)=>{
     navLinks.classList.toggle("open")
 
