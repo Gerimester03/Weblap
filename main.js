@@ -66,12 +66,16 @@ ScrollReveal().reveal(".service__card", {
 
 
 
-const swiper=new Swiper(".swiper",{
-    loop:true,
-    pagination:{
-        el:".swiper-pagination",
+// Megvárjuk, míg a teljes oldal és a képek is betöltenek
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
     },
-})
+});
 
 
 

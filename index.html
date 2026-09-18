@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styless.css">
     <title>weblap</title>
 </head>
@@ -16,7 +16,7 @@
             <div class="nav__header">
                 <div class="nav__logo">
                     <a href="#">
-                        <img src="/Picture/white_logo.png" alt="logo">
+                        <img src="Picture/white_logo.png" alt="logo">
                     </a>
                 </div>
                 <div class="nav__menu_btn" id="menu-btn">
@@ -78,6 +78,7 @@
         </div>
     </div>
 
+    <!-- SZOLGÁLTATÁSOK: a service__grid most már a belső konténerben van, nem csúszik le -->
     <section class="service" id="service">
         <div class="section__container service__container">
             <h2 class="section__header">~SERVICES~</h2>
@@ -86,35 +87,36 @@
                 consectetur consequuntur, doloremque deleniti autem culpa fuga natus nam ipsum iste saepe, explicabo
                 libero earum ipsam maiores quod nisi?
             </p>
-        </div>
-        <div class="service__grid">
-            <div class="service__card">
-                <h4>Portrait Session</h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat ea aliquid ex reiciendis
-                    quas harum vitae tempora, corporis eum non officia commodi nulla fuga dolorem nemo, excepturi aut
-                    eius.
-                </p>
-            </div>
-            <div class="service__card">
-                <h4>Portrait Session</h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat ea aliquid ex reiciendis
-                    quas harum vitae tempora, corporis eum non officia commodi nulla fuga dolorem nemo, excepturi aut
-                    eius.
-                </p>
-            </div>
-            <div class="service__card">
-                <h4>Portrait Session</h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat ea aliquid ex reiciendis
-                    quas harum vitae tempora, corporis eum non officia commodi nulla fuga dolorem nemo, excepturi aut
-                    eius.
-                </p>
+            <div class="service__grid">
+                <div class="service__card">
+                    <h4>Portrait Session</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat ea aliquid ex reiciendis
+                        quas harum vitae tempora, corporis eum non officia commodi nulla fuga dolorem nemo, excepturi aut
+                        eius.
+                    </p>
+                </div>
+                <div class="service__card">
+                    <h4>Portrait Session</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat ea aliquid ex reiciendis
+                        quas harum vitae tempora, corporis eum non officia commodi nulla fuga dolorem nemo, excepturi aut
+                        eius.
+                    </p>
+                </div>
+                <div class="service__card">
+                    <h4>Portrait Session</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat ea aliquid ex reiciendis
+                        quas harum vitae tempora, corporis eum non officia commodi nulla fuga dolorem nemo, excepturi aut
+                        eius.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- AJÁNLÁSOK: Tiszta háttérrel és önálló elrendezéssel -->
     <section class="section__container client__container" id="client">
         <h2 class="section__header">~TESTIMONIALS~</h2>
         <div class="swiper">
@@ -144,11 +146,9 @@
                     </div>
                 </div>
             </div>
-
             <div class="swiper-pagination"></div>
         </div>
     </section>
-
 
     <section class="section__container gallery__container">
         <h2 class="section__header">~GALLERY~</h2>
@@ -161,14 +161,10 @@
         <div class="gallery__btn">
             <button class="btn">VIEW GALLERY</button>
         </div>
-
     </section>
 
-
-
-
     <section class="blog" id="blog">
-        <div class="section__conteiner blog__container">
+        <div class="section__container blog__container">
             <div class="blog__content">
                 <h2 class="section__header">~ LATEST BLOG~</h2>
                 <h4>Capturing Emotion in Every Frame</h4>
@@ -180,70 +176,57 @@
                 <div class="blog__btn">
                     <button class="btn">Read More</button>
                 </div>
-
             </div>
         </div>
     </section>
 
-
     <section class="section__container instagram__container">
-        
-        <div class="instagram__flex">
-            <footer class="footer" id="contact">
-                <div class="footer__container">
-
-                    <div class="footer__logo">
-                        <img src="Picture/white_logo.png" alt="logo">
-                    </div>
-
-                    <h3>GET IN TOUCH</h3>
-
-                    <div class="footer__socials">
-
-                        <a href="https://www.facebook.com/profile.php?id=100005138117449" target="_blank" aria-label="Facebook">
-                            <i class="ri-facebook-fill"></i>
-                        </a>
-
-                        <a href="https://www.instagram.com/kepenyes_balazs/" target="_blank" aria-label="Instagram">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-
-                        <a href="mailto:email@gmail.com" aria-label="Email">
-                            <i class="ri-mail-line"></i>
-                        </a>
-
-                        <a href="tel:+36301234567" aria-label="Telefon">
-                            <i class="ri-phone-line"></i>
-                        </a>
-
-                    </div>
-
-                    <div class="footer__contact">
-                        <p>
-                            <i class="ri-mail-line"></i>
-                            kepenyesbalazs@gmail.com
-                        </p>
-
-                        <p>
-                            <i class="ri-phone-line"></i>
-                            +36 20 216 8704
-                        </p>
-                    </div>
-
-                    <div class="footer__copyright">
-                        <p>© 2026 Your Name. All rights reserved.</p>
-                    </div>
-
-                </div>
-            </footer>
-        </div>
+        <div class="instagram__flex"></div>
     </section>
 
+    <!-- FOOTER: Önállóan a szekciók alatt, nem beágyazva -->
+    <footer class="footer" id="contact">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="Picture/white_logo.png" alt="logo">
+            </div>
 
+            <h3>GET IN TOUCH</h3>
 
+            <div class="footer__socials">
+                <a href="https://www.facebook.com/profile.php?id=100005138117449" target="_blank" aria-label="Facebook">
+                    <i class="ri-facebook-fill"></i>
+                </a>
+                <a href="https://www.instagram.com/kepenyes_balazs/" target="_blank" aria-label="Instagram">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="mailto:email@gmail.com" aria-label="Email">
+                    <i class="ri-mail-line"></i>
+                </a>
+                <a href="tel:+36301234567" aria-label="Telefon">
+                    <i class="ri-phone-line"></i>
+                </a>
+            </div>
+
+            <div class="footer__contact">
+                <p>
+                    <i class="ri-mail-line"></i>
+                    kepenyesbalazs@gmail.com
+                </p>
+                <p>
+                    <i class="ri-phone-line"></i>
+                    +36 20 261 8704
+                </p>
+            </div>
+
+            <div class="footer__copyright">
+                <p>© 2026 Kepenyes Balázs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 
