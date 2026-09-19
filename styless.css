@@ -88,7 +88,6 @@ a {
 #about,
 #service,
 #client,
-#blog,
 #contact {
     scroll-margin-top: 90px;
 }
@@ -410,48 +409,6 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 9. BLOG SZEKCIÓ (BLOG) */
-.blog {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("Picture/blog.JPG");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.blog__container {
-    padding-bottom: 8rem;
-    display: grid;
-}
-
-.blog__content {
-    text-align: center;
-}
-
-.blog__content .section__header {
-    margin-bottom: 2rem;
-    color: var(--white);
-}
-
-.blog__content h4 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    font-weight: 400;
-    font-family: var(--header-font);
-    color: var(--white);
-}
-
-.blog__content p {
-    margin-bottom: 2rem;
-    line-height: 1.75rem;
-    color: var(--exta-light);
-}
-
-.blog__content .btn {
-    background-color: transparent;
-    border: 1px solid var(--white);
-}
-/* #endregion */
-
 /* #region 10. LÁBLÉC ÉS ELÉRHETŐSÉG (FOOTER & CONTACT) */
 .footer {
     width: 100vw;
@@ -560,7 +517,6 @@ nav.nav--scrolled {
 /* #region 11. RESZPONZÍV NÉZETEK (MEDIA QUERIES) */
 
 /* === MOBIL NÉZET (768px alatt) === */
-/* === MOBIL NÉZET (768px alatt) === */
 @media screen and (max-width: 768px) {
     .client__container {
         padding: 3rem 0.5rem;
@@ -633,14 +589,6 @@ nav.nav--scrolled {
 
     .gallery__grid {
         grid-template-columns: repeat(4, 1fr);
-    }
-
-    .blog__container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .blog__content {
-        grid-column: 2/3;
     }
 }
 

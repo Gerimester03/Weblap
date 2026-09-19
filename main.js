@@ -58,28 +58,6 @@ ScrollReveal().reveal(".service__container .section__descripiton", {
     delay:500,
 });
 
-
-
-
-
-ScrollReveal().reveal(".blog__content .blog__header", {
-    ...scrollRevealOption
-});
-
-ScrollReveal().reveal(".blog__content h4", {
-    ...scrollRevealOption,
-    delay:500,
-});
-
-ScrollReveal().reveal(".blog__content p", {
-    ...scrollRevealOption,
-    delay:1000,
-});
-ScrollReveal().reveal(".blog__content .blog__btn", {
-    ...scrollRevealOption,
-    delay:1500,
-});
-
 // Vélemények végtelenített (körkörös) lapozása
 const clientSlider = document.getElementById("clientSlider");
 const prevBtn = document.getElementById("prevBtn");
