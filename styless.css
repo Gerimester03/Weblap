@@ -295,33 +295,45 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 7. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS / SWIPER) */
+/* #region 7. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS) */
 .client__container {
-    padding: 5rem 1rem 3rem;
+    padding: 4rem 1rem 3rem;
     background-color: var(--white);
     position: relative;
     z-index: 5;
     clear: both;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
 }
 
-.swiper {
+.client__slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0; /* Mobilon ne tolja el felesleges rés a kártyákat */
+    padding-bottom: 1.5rem;
     width: 100%;
     max-width: 800px;
     margin: 2rem auto 0;
-    padding-bottom: 3rem;
-    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 
-.swiper-slide {
-    display: block;
-    height: auto;
+.client__slider::-webkit-scrollbar {
+    display: none;
 }
 
 .client__card {
-    max-width: 700px;
-    margin: 0 auto;
+    flex: 0 0 100%;
+    min-width: 100%;
+    width: 100%;
+    scroll-snap-align: start; /* start igazítás, hogy pontosan a széléhez tapadjon mobilon */
     text-align: center;
     padding: 1rem;
+    box-sizing: border-box;
+    display: block;
 }
 
 .client__card img {
@@ -347,13 +359,33 @@ nav.nav--scrolled {
     font-weight: 600;
 }
 
-.swiper-pagination {
-    position: relative;
-    margin-top: 1.5rem;
+.client__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
-.swiper-pagination-bullet-active {
-    background-color: var(--text-dark) !important;
+.client__arrow {
+    background-color: var(--white);
+    border: 2px solid var(--text-dark);
+    color: var(--text-dark);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.client__arrow:hover {
+    background-color: var(--text-dark);
+    color: var(--gold);
+    transform: scale(1.05);
 }
 /* #endregion */
 
@@ -528,22 +560,16 @@ nav.nav--scrolled {
 /* #region 11. RESZPONZÍV NÉZETEK (MEDIA QUERIES) */
 
 /* === MOBIL NÉZET (768px alatt) === */
+/* === MOBIL NÉZET (768px alatt) === */
 @media screen and (max-width: 768px) {
-    /* Az ajánlások mobilon pontosan illeszkedjenek, ne csússzanak el */
     .client__container {
-        padding-inline: 1rem;
+        padding: 3rem 0.5rem;
         width: 100%;
-        overflow: hidden;
-    }
-
-    .swiper {
-        width: 100% !important;
-        max-width: 100% !important;
+        overflow: visible; /* Fontos: ne vágja le a belső kártyát */
     }
 
     .client__card {
-        width: 100% !important;
-        padding-inline: 0.5rem;
+        padding: 0 0.5rem;
     }
 }
 

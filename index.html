@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styless.css">
     <title>weblap</title>
 </head>
@@ -116,50 +115,39 @@
         </div>
     </section>
 
-    <!-- AJÁNLÁSOK: Tiszta háttérrel és önálló elrendezéssel -->
+    <!-- AJÁNLÁSOK: Tiszta háttérrel és működő nyilakkal -->
     <section class="section__container client__container" id="client">
         <h2 class="section__header">~TESTIMONIALS~</h2>
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="client__card">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop"
-                            alt="client">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nemo, quasi perferendis
-                            molestiae repellat totam dolores, molestias delectus maxime amet reprehenderit, illum iusto
-                            porro ipsa quis reiciendis tempora. Tempore, nulla.
-                        </p>
-                        <h4>Sarah and Micheal</h4>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="client__card">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop"
-                            alt="client_2">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nemo, quasi perferendis
-                            molestiae repellat totam dolores, molestias delectus maxime amet reprehenderit, illum iusto
-                            porro ipsa quis reiciendis tempora. Tempore, nulla.
-                        </p>
-                        <h4>Sarah</h4>
-                    </div>
-                </div>
+        <div class="client__slider" id="clientSlider">
+            <div class="client__card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop" alt="client">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nemo, quasi perferendis
+                    molestiae repellat totam dolores, molestias delectus maxime amet reprehenderit, illum iusto
+                    porro ipsa quis reiciendis tempora. Tempore, nulla.
+                </p>
+                <h4>Sarah and Micheal</h4>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
 
-    <section class="section__container gallery__container">
-        <h2 class="section__header">~GALLERY~</h2>
-        <div class="gallery__grid">
-            <img src="Picture/gallery_1.JPG" alt="gallery">
-            <img src="Picture/gallery_2.JPG" alt="gallery">
-            <img src="Picture/gallery_3.JPG" alt="gallery">
-            <img src="Picture/gallery_4.JPG" alt="gallery">
+            <div class="client__card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop" alt="client_2">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nemo, quasi perferendis
+                    molestiae repellat totam dolores, molestias delectus maxime amet reprehenderit, illum iusto
+                    porro ipsa quis reiciendis tempora. Tempore, nulla.
+                </p>
+                <h4>Sarah</h4>
+            </div>
         </div>
-        <div class="gallery__btn">
-            <button class="btn">VIEW GALLERY</button>
+
+        <!-- ÚJ: Lapozó gombok asztali és mobil használatra -->
+        <div class="client__nav">
+            <button type="button" class="client__arrow" id="prevBtn" aria-label="Előző vélemény">
+                <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button type="button" class="client__arrow" id="nextBtn" aria-label="Következő vélemény">
+                <i class="ri-arrow-right-s-line"></i>
+            </button>
         </div>
     </section>
 
@@ -226,7 +214,6 @@
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 

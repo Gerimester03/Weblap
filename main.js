@@ -57,25 +57,8 @@ ScrollReveal().reveal(".service__container .section__descripiton", {
     ...scrollRevealOption,
     delay:500,
 });
-ScrollReveal().reveal(".service__card", {
-    duration:1000,
-    delay:1000,
-    interval:500
-});
 
 
-
-
-// Megvárjuk, míg a teljes oldal és a képek is betöltenek
-const swiper = new Swiper('.swiper', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-});
 
 
 
@@ -97,3 +80,23 @@ ScrollReveal().reveal(".blog__content .blog__btn", {
     delay:1500,
 });
 
+// Vélemények lapozása gombokkal
+const clientSlider = document.getElementById("clientSlider");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+if (clientSlider && prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+        clientSlider.scrollBy({
+            left: -clientSlider.clientWidth,
+            behavior: "smooth"
+        });
+    });
+
+    nextBtn.addEventListener("click", () => {
+        clientSlider.scrollBy({
+            left: clientSlider.clientWidth,
+            behavior: "smooth"
+        });
+    });
+}
