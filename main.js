@@ -80,23 +80,29 @@ ScrollReveal().reveal(".blog__content .blog__btn", {
     delay:1500,
 });
 
-// Vélemények lapozása gombokkal
+// Vélemények végtelenített (körkörös) lapozása
 const clientSlider = document.getElementById("clientSlider");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 if (clientSlider && prevBtn && nextBtn) {
-    prevBtn.addEventListener("click", () => {
-        clientSlider.scrollBy({
-            left: -clientSlider.clientWidth,
-            behavior: "smooth"
-        });
+    nextBtn.addEventListener("click", () => {
+        const maxScrollLeft = clientSlider.scrollWidth - clientSlider.clientWidth;
+        
+        // Ha elértük a végét (vagy 5px-es tűréshatáron belül vagyunk), ugorjunk az elejére
+        if (clientSlider.scrollLeft >= maxScrollLeft - 5) {
+            clientSlider.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+            clientSlider.scrollBy({ left: clientSlider.clientWidth, behavior: "smooth" });
+        }
     });
 
-    nextBtn.addEventListener("click", () => {
-        clientSlider.scrollBy({
-            left: clientSlider.clientWidth,
-            behavior: "smooth"
-        });
+    prevBtn.addEventListener("click", () => {
+        // Ha a legelején vagyunk, ugorjunk a végére
+        if (clientSlider.scrollLeft <= 5) {
+            clientSlider.scrollTo({ left: clientSlider.scrollWidth, behavior: "smooth" });
+        } else {
+            clientSlider.scrollBy({ left: -clientSlider.clientWidth, behavior: "smooth" });
+        }
     });
 }
