@@ -37,27 +37,22 @@ const scrollRevealOption = {
 // Rólunk (About) szekció animációi
 ScrollReveal().reveal(".about__container .section__header", {
     ...scrollRevealOption,
-});
+}); // 1. Cím beúszik azonnal (0 késleltetés)
 
-ScrollReveal().reveal(".about__container .section__description", {
+ScrollReveal().reveal(".about__image", {
     ...scrollRevealOption,
-    delay: 500,
-    interval: 500,
-});
+    delay: 400,
+}); // 2. Kép beúszik 400ms múlva
 
-ScrollReveal().reveal(".about__container img", {
+ScrollReveal().reveal(".about__content .section__description", {
     ...scrollRevealOption,
-    delay: 1500,
-});
+    delay: 800,
+    interval: 300,
+}); // 3. Szövegek beúsznak 800ms múlva (az interval miatt a két bekezdés szépen egymás után)
 
-// Szolgáltatások (Services) szekció animációi
-ScrollReveal().reveal(".service__container .section__header", {
+ScrollReveal().reveal(".about__logo", {
     ...scrollRevealOption,
-});
-
-ScrollReveal().reveal(".service__container .section__descripiton", {
-    ...scrollRevealOption,
-    delay: 500,
+    delay: 1400,
 });
 //#endregion
 

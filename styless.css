@@ -173,15 +173,61 @@ nav.nav--scrolled {
 /* #endregion */
 
 /* #region 4. RÓLUNK SZEKCIÓ (ABOUT) */
-.about__container .section__description {
-    max-width: 900px;
-    margin-inline: auto;
+.about__title {
+    margin-bottom: 3rem;
+}
+
+.about__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 800px; /* Szűkebb konténer, hogy a szöveg ne nyúljon el túlságosan */
+    margin: 0 auto;
+}
+
+.about__image {
+    width: 100%;
+    max-width: 250px; /* Szép méret középen */
+    margin: 0 auto;
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
-.about__container img {
-    max-width: 300px;
-    margin-inline: auto;
+.about__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.about__content {
+    width: 100%;
+}
+
+.about__content .section__description {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.about__signature {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.about__logo {
+    display: flex;
+    justify-content: center; /* Ez húzza tökéletesen középre */
+    margin-top: 2.5rem;      /* Térköz a szöveg és a logó között */
+    width: 100%;
+}
+
+.about__logo img {
+    max-width: 220px; /* Itt tudod állítani a méretet (az előző 160px volt) */
+    height: auto;
+    display: block;
 }
 /* #endregion */
 
