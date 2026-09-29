@@ -173,6 +173,14 @@ nav.nav--scrolled {
 /* #endregion */
 
 /* #region 4. RÓLUNK SZEKCIÓ (ABOUT) */
+.section__container.about__container {
+    padding-top: 1rem !important; /* Ez erőszakkal felülírja a nagy üres teret */
+}
+
+.about__container .section__header {
+    margin-top: 0 !important; /* Biztosra megyünk, hogy a címsor felett se maradjon margó */
+}
+
 .about__title {
     margin-bottom: 3rem;
 }
