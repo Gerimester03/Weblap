@@ -173,12 +173,8 @@ nav.nav--scrolled {
 /* #endregion */
 
 /* #region 4. RÓLUNK SZEKCIÓ (ABOUT) */
-.section__container.about__container {
-    padding-top: 1rem !important; /* Ez erőszakkal felülírja a nagy üres teret */
-}
-
-.about__container .section__header {
-    margin-top: 0 !important; /* Biztosra megyünk, hogy a címsor felett se maradjon margó */
+.about__container{
+    margin-top: 0rem;
 }
 
 .about__title {
@@ -442,7 +438,144 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 8. GALÉRIA SZEKCIÓ (GALLERY) */
+/* #region 8. GYAKORI KÉRDÉSEK (FAQ) */
+.faq {
+    background-color: var(--text-dark); /* Ez teszi a hátteret sötétté */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: block;
+}
+
+.faq__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.faq__container .section__header {
+    margin-bottom: 3rem;
+    color: var(--white); /* Címsor fehér lesz */
+}
+
+/* 1. Szint: Fő kategóriák (Témák) */
+.faq__category {
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.faq__category-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--white); /* Szöveg fehér */
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.faq__category-btn i {
+    font-size: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+/* Ha a kategória aktív (nyitva van), a nyíl megfordul */
+.faq__category.active .faq__category-btn i {
+    transform: rotate(180deg);
+    color: var(--gold);
+}
+
+/* 1. Szint lenyíló része (alapból rejtett) */
+.faq__questions {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.faq__category.active .faq__questions {
+    max-height: 2000px;
+}
+
+/* 2. Szint: Belső kérdések */
+.faq__item {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq__question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--white); /* Kérdés szövege fehér */
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.faq__question i {
+    font-size: 1.2rem;
+    transition: transform 0.4s ease;
+}
+
+/* Ha a kérdés nyitva van, a (+) ikon (x)-szé válik */
+.faq__item.active .faq__question i {
+    transform: rotate(45deg);
+    color: var(--gold);
+}
+
+/* 2. Szint lenyíló része (Válaszok) */
+.faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.faq__item.active .faq__answer {
+    max-height: 600px;
+}
+
+.faq__answer p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--white); /* A lenyíló válasz is fehér lesz */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* -- FAQ HOVER (Megegyezik a Header menüvel) -- */
+.faq__category-btn span,
+.faq__question span {
+    border-bottom: 2px solid transparent; 
+    padding-bottom: 4px; 
+    transition: border-color 0.3s; 
+}
+
+.faq__category-btn:hover span,
+.faq__question:hover span {
+    border-color: var(--white);
+}
+/* #endregion */
+
+/* #region 9. GALÉRIA SZEKCIÓ (GALLERY) */
 .gallery__grid {
     margin-block: 2rem;
     display: grid;
@@ -471,7 +604,7 @@ nav.nav--scrolled {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-top: 60px;
+    margin-top: 0; /* <--- EZT KELLETT 0-RA ÁTÍRNI */
     margin-bottom: 0;
     background-color: var(--text-dark);
     color: var(--white);
