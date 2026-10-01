@@ -56,6 +56,29 @@ ScrollReveal().reveal(".about__logo", {
 });
 //#endregion
 
+//#region --- GYAKORI KÉRDÉSEK (FAQ) MŰKÖDÉSE ---
+
+// 1. Fő kategóriák (Témák) lenyitása
+const faqCategories = document.querySelectorAll(".faq__category-btn");
+    
+faqCategories.forEach(btn => {
+    btn.addEventListener("click", () => {
+        // Hozzáadja vagy leveszi az 'active' osztályt a szülő elemről
+        btn.parentElement.classList.toggle("active");
+    });
+});
+
+// 2. Belső kérdések lenyitása és a válaszok megjelenítése
+const faqQuestions = document.querySelectorAll(".faq__question");
+    
+faqQuestions.forEach(btn => {
+    btn.addEventListener("click", () => {
+        // Hozzáadja vagy leveszi az 'active' osztályt a szülő elemről
+        btn.parentElement.classList.toggle("active");
+    });
+});
+//#endregion
+
 //#region 3. VÉLEMÉNYEK LAPOZÓ (TESTIMONIALS SLIDER)
 const clientSlider = document.getElementById("clientSlider");
 const prevBtn = document.getElementById("prevBtn");

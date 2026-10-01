@@ -465,7 +465,7 @@ nav.nav--scrolled {
 .faq__category {
     margin-bottom: 1.5rem;
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
     border-radius: 5px;
 }
 
@@ -519,10 +519,10 @@ nav.nav--scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem 1.5rem 1.2rem 2.5rem; /* Bal oldali behúzás: 2.5rem */
     background: transparent;
     border: none;
-    color: var(--white); /* Kérdés szövege fehér */
+    color: var(--white);
     font-size: 1rem;
     font-family: inherit;
     font-weight: 500;
@@ -554,8 +554,8 @@ nav.nav--scrolled {
 }
 
 .faq__answer p {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    color: var(--white); /* A lenyíló válasz is fehér lesz */
+    padding: 0.5rem 1.5rem 1.5rem 3.5rem; /* Bal oldali behúzás: 3.5rem */
+    color: var(--white);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
@@ -713,6 +713,50 @@ nav.nav--scrolled {
 
     .client__card {
         padding: 0 0.5rem;
+    }
+    /* FAQ mobil nézet optimalizálása */
+    .faq__container {
+        padding: 2.5rem 1rem;
+    }
+
+    .faq__category-btn {
+        padding: 1rem 0.5rem;
+        font-size: 0.95rem; /* Kisebb betűméret, hogy kényelmesen kiférjen */
+        letter-spacing: 0.5px;
+        text-align: left;
+        gap: 1rem; /* Fix távolság a szöveg és a nyíl között */
+    }
+
+    .faq__category-btn span {
+        flex: 1; /* A szöveg kitölti a rendelkezésre álló helyet balra igazítva */
+        text-align: left;
+    }
+
+    .faq__category-btn i {
+        font-size: 1.25rem;
+        flex-shrink: 0; /* A nyíl nem nyomódhat össze */
+    }
+
+    .faq__question {
+        padding: 0.9rem 0.5rem 0.9rem 1.2rem;
+        font-size: 0.9rem;
+        text-align: left;
+        gap: 0.75rem;
+    }
+
+    .faq__question span {
+        flex: 1;
+        text-align: left;
+    }
+
+    .faq__question i {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
+    .faq__answer p {
+        padding: 0.25rem 0.5rem 1.25rem 1.8rem;
+        font-size: 0.85rem;
     }
 }
 
