@@ -438,6 +438,116 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
+/* #region 9. EGYEDI ÁRAJÁNLAT (QUOTE FORM) */
+.quote {
+    background-color: transparent; 
+    padding: 5rem 1rem;
+}
+
+.quote__container .section__header {
+    color: var(--text-dark);
+
+    text-align: center;
+}
+
+.quote__container .section__description {
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.quote__form {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); 
+    border-top: 4px solid var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote__form_group {
+    margin-bottom: 1.5rem;
+}
+
+.quote__form label {
+    color: var(--text-dark); 
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Arany csillagok a kötelező mezőknél */
+.quote__form label span,
+.quote__required span {
+    color: #d4af37; /* Arany szín */
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+/* Alap beviteli mezők (input, select, textarea) stílusa */
+.quote__form input,
+.quote__form select,
+.quote__form textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-dark);
+    background-color: #f8f9fa; /* Finom világosszürke */
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Fókusz effektek arany színnel, ha belekattint a felhasználó */
+.quote__form input:focus,
+.quote__form select:focus,
+.quote__form textarea:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    background-color: #ffffff;
+}
+
+/* --- TELEFONSZÁM ÉS ORSZÁGHÍVÓ EGYMÁS MELLETT --- */
+.phone__input {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Távolság a hívószám és a telefonszám között */
+    width: 100%;
+}
+
+.phone__input select {
+    width: 120px; /* Fix, keskeny méret a hívószámnak */
+    flex-shrink: 0; /* Nem engedi összenyomódni */
+    cursor: pointer;
+}
+
+.phone__input input {
+    flex: 1; /* A telefonszám mező kitölti a maradék helyet */
+}
+
+/* Kötelező mezők felirat az űrlap alján */
+.quote__required {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Küldés gomb stílusa */
+.quote__form_button .btn {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+/* #endregion */
+
 /* #region 8. GYAKORI KÉRDÉSEK (FAQ) */
 .faq {
     background-color: var(--text-dark); /* Ez teszi a hátteret sötétté */
@@ -757,6 +867,11 @@ nav.nav--scrolled {
     .faq__answer p {
         padding: 0.25rem 0.5rem 1.25rem 1.8rem;
         font-size: 0.85rem;
+    }
+
+
+    .quote__form {
+        padding: 2rem 1.5rem;
     }
 }
 

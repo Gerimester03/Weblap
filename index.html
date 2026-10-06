@@ -211,24 +211,27 @@
 
                 <!-- Név -->
                 <div class="quote__form_group">
-                    <label for="name">Név*</label>
+                    <label for="name">Név<span>*</span></label>
                     <input type="text" id="name" name="name" placeholder="Teljes név" required>
                 </div>
 
                 <!-- E-mail -->
                 <div class="quote__form_group">
-                    <label for="email">E-mail cím*</label>
+                    <label for="email">E-mail cím<span>*</span></label>
                     <input type="email" id="email" name="email" placeholder="email@example.com" required>
                 </div>
 
                 <!-- Telefonszám -->
                 <div class="quote__form_group">
-                    <label for="phone">Telefonszám <span>*</span></label>
+                    <label for="phone">Telefonszám<span>*</span></label>
+
 
                     <div class="phone__input">
 
+                        <!-- Ország / hívószám -->
                         <select id="countryCode" name="countryCode" required>
-                            <option value="+36" selected>🇭🇺 Magyarország (+36)</option>
+                            <option value="+36">🇭🇺 +36</option>
+                            <option value="+43">🇦🇹 +43</option>
                             <option value="+49">🇩🇪 +49</option>
                             <option value="+44">🇬🇧 +44</option>
                             <option value="+33">🇫🇷 +33</option>
@@ -249,14 +252,16 @@
                             <option value="+1">🇨🇦 +1</option>
                         </select>
 
+                        <!-- Telefonszám -->
                         <input type="tel" id="phone" name="phone" placeholder="30 261 8704" required>
 
                     </div>
+
                 </div>
 
                 <!-- Fotózás típusa -->
                 <div class="quote__form_group">
-                    <label for="service">Milyen fotózást szeretnél?*</label>
+                    <label for="service">Milyen fotózást szeretnél?<span>*</span></label>
 
                     <select id="service" name="service" required>
                         <option value="" disabled selected>
@@ -291,21 +296,21 @@
 
                 <!-- Dátum -->
                 <div class="quote__form_group">
-                    <label for="date">Tervezett időpont*</label>
+                    <label for="date">Tervezett időpont<span>*</span></label>
 
                     <input type="date" id="date" name="date" required>
                 </div>
 
                 <!-- Helyszín -->
                 <div class="quote__form_group">
-                    <label for="location">Helyszín*</label>
+                    <label for="location">Helyszín<span>*</span></label>
 
                     <input type="text" id="location" name="location" placeholder="Pl. Budapest, Szarvas..." required>
                 </div>
 
                 <!-- Üzenet -->
                 <div class="quote__form_group quote__form_group_full">
-                    <label for="message">Üzenet / Egyéb információ*</label>
+                    <label for="message">Üzenet / Egyéb információ<span>*</span></label>
 
                     <textarea id="message" name="message" rows="6" required
                         placeholder="Írd le röviden, milyen fotózást szeretnél..."></textarea>
