@@ -438,7 +438,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 9. EGYEDI ÁRAJÁNLAT (QUOTE FORM) */
+/* #region 8. EGYEDI ÁRAJÁNLAT (QUOTE FORM) */
 .quote {
     background-color: transparent; 
     padding: 5rem 1rem;
@@ -553,9 +553,51 @@ nav.nav--scrolled {
     text-underline-offset: 5px; /* Kicsit lejjebb tolja a vonalat */
     text-decoration-thickness: 2px; /* Kicsit vastagabb, határozott vonal */
 }
+
+/* --- SIKERES KÜLDÉS ÜZENET (KÁRTYA) --- */
+.quote__success {
+    display: none; /* Alapértelmezetten elrejtjük, hogy ne látszódjon betöltéskor! */
+    background-color: var(--white);
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-top: 4px solid var(--text-light); 
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* A nagy pipa ikon formázása */
+.quote__success_icon i {
+    font-size: 5rem;
+    color: #d4af37; /* Arany szín */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Címsor és bekezdések */
+.quote__success h3 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.quote__success p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Az animáció, ami finoman beúsztatja a kártyát */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 /* #endregion */
 
-/* #region 8. GYAKORI KÉRDÉSEK (FAQ) */
+/* #region 9. GYAKORI KÉRDÉSEK (FAQ) */
 .faq {
     background-color: var(--text-dark); /* Ez teszi a hátteret sötétté */
     width: 100vw;
@@ -692,7 +734,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 9. GALÉRIA SZEKCIÓ (GALLERY) */
+/* #region 10. GALÉRIA SZEKCIÓ (GALLERY) */
 .gallery__grid {
     margin-block: 2rem;
     display: grid;
@@ -713,7 +755,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 10. LÁBLÉC ÉS ELÉRHETŐSÉG (FOOTER & CONTACT) */
+/* #region 11. LÁBLÉC ÉS ELÉRHETŐSÉG (FOOTER & CONTACT) */
 .footer {
     width: 100vw;
     position: relative;
@@ -818,7 +860,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 11. RESZPONZÍV NÉZETEK (MEDIA QUERIES) */
+/* #region 12. RESZPONZÍV NÉZETEK (MEDIA QUERIES) */
 
 /* === MOBIL NÉZET (768px alatt) === */
 @media screen and (max-width: 768px) {

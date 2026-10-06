@@ -81,6 +81,30 @@ if (dateInput) {
     dateInput.min = todayFormatted;
 
 }
+
+
+const quoteForm = document.getElementById('quoteForm');
+const quoteSuccess = document.getElementById('quoteSuccess');
+
+if (quoteForm && quoteSuccess) {
+    quoteForm.addEventListener('submit', function(e) {
+        // 1. Megakadályozzuk, hogy az oldal frissüljön és elugorjon a tetejére
+        e.preventDefault(); 
+        
+        // 2. Eltüntetjük a kitöltött űrlapot
+        quoteForm.style.display = 'none';
+        
+        // 3. Finoman megjelenítjük a köszönő kártyát
+        quoteSuccess.style.display = 'block';
+
+        quoteSuccess.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+        });
+    });
+}
+
+
 //#endregion
 
 //#region 4. GYAKORI KÉRDÉSEK (FAQ) MŰKÖDÉSE

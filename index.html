@@ -195,7 +195,7 @@
     </section>
     <!-- #endregion -->
 
-    <!-- #region 9. EGYEDI ÁRAJÁNLAT KÉRÉSE -->
+    <!-- #region 7. EGYEDI ÁRAJÁNLAT KÉRÉSE -->
     <section class="quote" id="quote">
 
         <div class="section__container quote__container">
@@ -207,7 +207,7 @@
                 Töltsd ki az alábbi űrlapot, és hamarosan felveszem veled a kapcsolatot.
             </p>
 
-            <form class="quote__form">
+            <form class="quote__form" id="quoteForm">
 
                 <!-- Név -->
                 <div class="quote__form_group">
@@ -328,8 +328,27 @@
                         ÁRAJÁNLAT KÉRÉSE
                     </button>
                 </div>
-
             </form>
+            <!-- SIKERES KÜLDÉS UTÁNI ÜZENET -->
+        <div class="quote__success" id="quoteSuccess">
+
+            <div class="quote__success_icon">
+                <i class="ri-checkbox-circle-line"></i>
+            </div>
+
+            <h3>Köszönöm a megkeresést!</h3>
+
+            <p>
+                Az árajánlatkérésed sikeresen elküldted.
+                Hamarosan felveszem veled a kapcsolatot
+                a megadott elérhetőségeiden.
+            </p>
+
+            <p>
+                Addig is köszönöm a türelmed!
+            </p>
+
+        </div>
 
         </div>
 
