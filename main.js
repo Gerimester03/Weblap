@@ -56,7 +56,7 @@ ScrollReveal().reveal(".about__logo", {
 });
 //#endregion
 
-//#region --- GYAKORI KÉRDÉSEK (FAQ) MŰKÖDÉSE ---
+//#region 3. GYAKORI KÉRDÉSEK (FAQ) MŰKÖDÉSE
 
 // 1. Fő kategóriák (Témák) lenyitása
 const faqCategories = document.querySelectorAll(".faq__category-btn");
@@ -79,7 +79,7 @@ faqQuestions.forEach(btn => {
 });
 //#endregion
 
-//#region 3. VÉLEMÉNYEK LAPOZÓ (TESTIMONIALS SLIDER)
+//#region 4. VÉLEMÉNYEK LAPOZÓ (TESTIMONIALS SLIDER)
 const clientSlider = document.getElementById("clientSlider");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");

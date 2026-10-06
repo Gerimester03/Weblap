@@ -195,6 +195,142 @@
     </section>
     <!-- #endregion -->
 
+    <!-- #region 9. EGYEDI ÁRAJÁNLAT KÉRÉSE -->
+    <section class="quote" id="quote">
+
+        <div class="section__container quote__container">
+
+            <h2 class="section__header">~ EGYEDI ÁRAJÁNLAT ~</h2>
+
+            <p class="section__description">
+                Szeretnél személyre szabott ajánlatot kérni?
+                Töltsd ki az alábbi űrlapot, és hamarosan felveszem veled a kapcsolatot.
+            </p>
+
+            <form class="quote__form">
+
+                <!-- Név -->
+                <div class="quote__form_group">
+                    <label for="name">Név*</label>
+                    <input type="text" id="name" name="name" placeholder="Teljes név" required>
+                </div>
+
+                <!-- E-mail -->
+                <div class="quote__form_group">
+                    <label for="email">E-mail cím*</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+
+                <!-- Telefonszám -->
+                <div class="quote__form_group">
+                    <label for="phone">Telefonszám <span>*</span></label>
+
+                    <div class="phone__input">
+
+                        <select id="countryCode" name="countryCode" required>
+                            <option value="+36" selected>🇭🇺 Magyarország (+36)</option>
+                            <option value="+49">🇩🇪 +49</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+33">🇫🇷 +33</option>
+                            <option value="+39">🇮🇹 +39</option>
+                            <option value="+34">🇪🇸 +34</option>
+                            <option value="+31">🇳🇱 +31</option>
+                            <option value="+32">🇧🇪 +32</option>
+                            <option value="+41">🇨🇭 +41</option>
+                            <option value="+420">🇨🇿 +420</option>
+                            <option value="+421">🇸🇰 +421</option>
+                            <option value="+385">🇭🇷 +385</option>
+                            <option value="+381">🇷🇸 +381</option>
+                            <option value="+40">🇷🇴 +40</option>
+                            <option value="+48">🇵🇱 +48</option>
+                            <option value="+351">🇵🇹 +351</option>
+                            <option value="+30">🇬🇷 +30</option>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+1">🇨🇦 +1</option>
+                        </select>
+
+                        <input type="tel" id="phone" name="phone" placeholder="30 261 8704" required>
+
+                    </div>
+                </div>
+
+                <!-- Fotózás típusa -->
+                <div class="quote__form_group">
+                    <label for="service">Milyen fotózást szeretnél?*</label>
+
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>
+                            Válassz egy lehetőséget
+                        </option>
+
+                        <option value="portrait">
+                            Portréfotózás
+                        </option>
+
+                        <option value="event">
+                            Rendezvény / Eseményfotózás
+                        </option>
+
+                        <option value="wedding">
+                            Esküvői fotózás
+                        </option>
+
+                        <option value="sport">
+                            Sportfotózás
+                        </option>
+
+                        <option value="product">
+                            Termékfotózás
+                        </option>
+
+                        <option value="other">
+                            Egyéb
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Dátum -->
+                <div class="quote__form_group">
+                    <label for="date">Tervezett időpont*</label>
+
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <!-- Helyszín -->
+                <div class="quote__form_group">
+                    <label for="location">Helyszín*</label>
+
+                    <input type="text" id="location" name="location" placeholder="Pl. Budapest, Szarvas..." required>
+                </div>
+
+                <!-- Üzenet -->
+                <div class="quote__form_group quote__form_group_full">
+                    <label for="message">Üzenet / Egyéb információ*</label>
+
+                    <textarea id="message" name="message" rows="6" required
+                        placeholder="Írd le röviden, milyen fotózást szeretnél..."></textarea>
+                </div>
+
+
+                <!-- Csillaggal jelölt mezők kötelező kitölteni -->
+                <p class="quote__required">
+                    <span>*</span> A csillaggal jelölt mezők kitöltése kötelező.
+                </p>
+
+                <!-- Gomb -->
+                <div class="quote__form_button">
+                    <button type="submit" class="btn">
+                        ÁRAJÁNLAT KÉRÉSE
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+    <!-- #endregion -->
+
     <!-- #region 8. FAQ -->
 
     <section class="faq" id="faq">
