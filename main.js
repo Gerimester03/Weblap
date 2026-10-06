@@ -88,21 +88,51 @@ const quoteSuccess = document.getElementById('quoteSuccess');
 
 if (quoteForm && quoteSuccess) {
     quoteForm.addEventListener('submit', function(e) {
-        // 1. Megakadályozzuk, hogy az oldal frissüljön és elugorjon a tetejére
+        // 1. Megakadályozzuk, hogy az oldal frissüljön
         e.preventDefault(); 
         
-        // 2. Eltüntetjük a kitöltött űrlapot
-        quoteForm.style.display = 'none';
-        
-        // 3. Finoman megjelenítjük a köszönő kártyát
-        quoteSuccess.style.display = 'block';
+        // Gomb állapotának megváltoztatása küldés közben
+        const submitBtn = quoteForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = 'Küldés folyamatban...';
 
-        quoteSuccess.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'center'
+        // 2. Az űrlap adatainak összegyűjtése
+        const formData = new FormData(quoteForm);
+
+        // 3. --- IDE MÁSOLD BE A SAJÁT FORMSPREE LINKEDET! ---
+        const formspreeEndpoint = "https://formspree.io/f/moejjdnv"; 
+
+        // 4. Az adatok elküldése a háttérben
+        fetch(formspreeEndpoint, {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // SIKERES KÜLDÉS esetén: űrlap eltüntetése, kártya megjelenítése
+                quoteForm.style.display = 'none';
+                quoteSuccess.style.display = 'block';
+
+                quoteSuccess.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            } else {
+                alert("Hiba történt a küldés során. Kérlek, próbáld újra!");
+                submitBtn.innerText = originalBtnText;
+            }
+        })
+        .catch(error => {
+            alert("Hálózati hiba történt. Kérlek, ellenőrizd az internetkapcsolatot!");
+            submitBtn.innerText = originalBtnText;
         });
     });
 }
+
+
 
 
 //#endregion
