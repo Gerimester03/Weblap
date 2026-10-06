@@ -56,11 +56,38 @@ ScrollReveal().reveal(".about__logo", {
 });
 //#endregion
 
-//#region 3. GYAKORI KÉRDÉSEK (FAQ) MŰKÖDÉSE
+//#region 3. ŰRLAP VALIDÁCIÓK (Telefonszám és Dátum)
+
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+    phoneInput.addEventListener('input', function () {
+        // Ez a sor megkeres minden karaktert, ami NEM szám (0-9), és azonnal törli (üres stringre cseréli)
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+}
+
+const dateInput = document.getElementById("date");
+
+if (dateInput) {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    const todayFormatted = `${year}-${month}-${day}`;
+
+    dateInput.min = todayFormatted;
+
+}
+//#endregion
+
+//#region 4. GYAKORI KÉRDÉSEK (FAQ) MŰKÖDÉSE
 
 // 1. Fő kategóriák (Témák) lenyitása
 const faqCategories = document.querySelectorAll(".faq__category-btn");
-    
+
 faqCategories.forEach(btn => {
     btn.addEventListener("click", () => {
         // Hozzáadja vagy leveszi az 'active' osztályt a szülő elemről
@@ -70,7 +97,7 @@ faqCategories.forEach(btn => {
 
 // 2. Belső kérdések lenyitása és a válaszok megjelenítése
 const faqQuestions = document.querySelectorAll(".faq__question");
-    
+
 faqQuestions.forEach(btn => {
     btn.addEventListener("click", () => {
         // Hozzáadja vagy leveszi az 'active' osztályt a szülő elemről
@@ -79,7 +106,7 @@ faqQuestions.forEach(btn => {
 });
 //#endregion
 
-//#region 4. VÉLEMÉNYEK LAPOZÓ (TESTIMONIALS SLIDER)
+//#region 5. VÉLEMÉNYEK LAPOZÓ (TESTIMONIALS SLIDER)
 const clientSlider = document.getElementById("clientSlider");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -88,7 +115,7 @@ if (clientSlider && prevBtn && nextBtn) {
     // Következő kártyára ugrás (vagy vissza az elejére)
     nextBtn.addEventListener("click", () => {
         const maxScrollLeft = clientSlider.scrollWidth - clientSlider.clientWidth;
-        
+
         if (clientSlider.scrollLeft >= maxScrollLeft - 5) {
             clientSlider.scrollTo({ left: 0, behavior: "smooth" });
         } else {
