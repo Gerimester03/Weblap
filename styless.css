@@ -293,64 +293,14 @@ nav.nav--scrolled {
 .portfolio__card:hover .portfolio__content {
     opacity: 1;
 }
-/* #endregion */
 
-/* #region 6. SZOLGÁLTATÁSOK SZEKCIÓ (SERVICES) */
-.service {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("Picture/20221008-2.JPG");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.service__container .section__header {
-    color: var(--white);
-}
-
-.service__container .section__descripiton {
-    max-width: 600px;
-    margin-inline: auto;
-    color: var(--exta-light);
-}
-
-.service__grid {
-    margin-top: 4rem;
-    display: grid;
-    gap: 2rem;
-}
-
-.service__card {
-    text-align: center;
-}
-
-.service__card h4 {
-    position: relative;
-    isolation: isolate;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    font-size: 1.75rem;
-    font-weight: 400;
-    font-family: var(--header-font);
-    color: var(--white);
-}
-
-.service__card h4::after {
-    position: absolute;
-    content: "~";
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    line-height: 0;
-}
-
-.service__card p {
-    color: var(--exta-light);
-    line-height: 1.75rem;
+/* --- KIS EXTRA HELY A PORTFÓLIÓ UGRÁSNÁL --- */
+#portfolio {
+    scroll-margin-top: 75px; 
 }
 /* #endregion */
 
-/* #region 7. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS) */
+/* #region 6. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS) */
 .client__container {
     padding: 4rem 1rem 3rem;
     background-color: var(--white);
@@ -444,7 +394,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 8. EGYEDI ÁRAJÁNLAT (QUOTE FORM) */
+/* #region 7. EGYEDI ÁRAJÁNLAT (QUOTE FORM) */
 .quote {
     background-color: var(--white); 
     padding: 5rem 1rem;
@@ -603,7 +553,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 9. GYAKORI KÉRDÉSEK (FAQ) */
+/* #region 8. GYAKORI KÉRDÉSEK (FAQ) */
 .faq {
     background-color: var(--text-dark); /* Ez teszi a hátteret sötétté */
     width: 100vw;
@@ -738,9 +688,12 @@ nav.nav--scrolled {
 .faq__question:hover span {
     border-color: var(--white);
 }
+#faq {
+    scroll-margin-top: 75px; 
+}
 /* #endregion */
 
-/* #region 10. GALÉRIA SZEKCIÓ (GALLERY) */
+/* #region 9. GALÉRIA SZEKCIÓ (GALLERY) */
 .gallery__grid {
     margin-block: 2rem;
     display: grid;
@@ -761,7 +714,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 11. LÁBLÉC ÉS ELÉRHETŐSÉG (FOOTER & CONTACT) */
+/* #region 10. LÁBLÉC ÉS ELÉRHETŐSÉG (FOOTER & CONTACT) */
 .footer {
     width: 100vw;
     position: relative;
@@ -866,7 +819,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 12. RESZPONZÍV NÉZETEK (MEDIA QUERIES) */
+/* #region 11. RESZPONZÍV NÉZETEK (MEDIA QUERIES) */
 
 /* === MOBIL NÉZET (768px alatt) === */
 @media screen and (max-width: 768px) {
@@ -935,9 +888,6 @@ nav.nav--scrolled {
     .portfolio__grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .service__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
     .gallery__grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -981,10 +931,6 @@ nav.nav--scrolled {
     }
 
     .portfolio__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .service__grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
