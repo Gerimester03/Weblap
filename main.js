@@ -56,7 +56,7 @@ ScrollReveal().reveal(".about__logo", {
 });
 //#endregion
 
-//#region 3. ŰRLAP VALIDÁCIÓK (Telefonszám és Dátum)
+//#region 3. ŰRLAP VALIDÁCIÓK (Telefonszám és Dátum és Beküldés)
 
 const phoneInput = document.getElementById('phone');
 if (phoneInput) {
@@ -186,4 +186,98 @@ if (clientSlider && prevBtn && nextBtn) {
         }
     });
 }
+//#endregion
+
+
+
+//#region PORTFÓLIÓ GALÉRIA ÉS LIGHTBOX VEZÉRLÉS
+
+// 1. Lenyíló galéria kezelése
+function toggleGallery(galleryId) {
+    const allGalleries = document.querySelectorAll('.gallery__container');
+    const selectedGallery = document.getElementById(galleryId);
+    
+    if (selectedGallery.style.display === 'block') {
+        selectedGallery.style.display = 'none';
+        return;
+    }
+
+    allGalleries.forEach(gallery => {
+        gallery.style.display = 'none';
+    });
+
+    selectedGallery.style.display = 'block';
+
+    setTimeout(() => {
+        selectedGallery.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }, 100);
+}
+
+// 2. Lightbox (Képnagyító) logika
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox__close');
+    const prevBtn = document.querySelector('.lightbox__prev');
+    const nextBtn = document.querySelector('.lightbox__next');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    // Képekre kattintás figyelése a galériákban
+    document.querySelectorAll('.gallery__thumb').forEach(thumb => {
+        thumb.addEventListener('click', (e) => {
+            // Megkeressük az adott galérián belüli összes képet a lapozáshoz
+            const activeGalleryContainer = thumb.closest('.gallery__container');
+            currentImages = Array.from(activeGalleryContainer.querySelectorAll('.gallery__thumb'));
+            currentIndex = currentImages.indexOf(e.target);
+
+            // Megnyitjuk a Lightboxot a kiválasztott képpel
+            lightboxImg.src = e.target.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    // Bezárás X-re kattintva
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Bezárás, ha a sötét háttérre kattintanak (de magára a képre nem)
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Következő kép lapozás
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        lightboxImg.src = currentImages[currentIndex].src;
+    });
+
+    // Előző kép lapozás
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        lightboxImg.src = currentImages[currentIndex].src;
+    });
+
+    // Billentyűzet támogatás (ESC-re bezárás, bal/jobb nyíllal lapozás)
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            }
+        }
+    });
+});
 //#endregion

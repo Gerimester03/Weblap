@@ -85,30 +85,71 @@
     </div>
     <!-- #endregion -->
 
-    <!-- #region 4. PORTFÓLIÓ SZEKCIÓ (PORTFOLIO) -->
-    <div class="section__container portfolio__container" id="portfolio">
-        <h2 class="section__header">~Portfolio~</h2>
-        <div class="portfolio__grid">
-            <div class="portfolio__card">
-                <img src="Picture/portfolio_1.jpg" alt="portfolio party">
-                <div class="portfolio__content">
-                    <button class="btn">VIEW PORTFOLIO</button>
+    <!-- #region PORTFÓLIÓ SZEKCIÓ (PORTFOLIO) -->
+    <section class="portfolio" id="portfolio">
+        <div class="section__container portfolio__container">
+            <h2 class="section__header">~Portfolio~</h2>
+            
+            <!-- 1. EZ A FENTI KÁRTYÁK RÁCSA (Ez marad fent érintetlenül) -->
+            <div class="portfolio__grid">
+                <div class="portfolio__card">
+                    <img src="Picture/portfolio_1.jpg" alt="portfolio party">
+                    <div class="portfolio__content">
+                        <button class="btn" onclick="toggleGallery('gallery-party')">RENDEZVÉNYEK</button>
+                    </div>
+                </div>
+                
+                <div class="portfolio__card">
+                    <img src="Picture/portfolio_2.jpg" alt="portfolio sport">
+                    <div class="portfolio__content">
+                        <button class="btn" onclick="toggleGallery('gallery-sport')">SPORTFOTÓZÁS</button>
+                    </div>
+                </div>
+                
+                <div class="portfolio__card">
+                    <img src="Picture/portfolio_3.jpg" alt="portfolio wedding">
+                    <div class="portfolio__content">
+                        <button class="btn" onclick="toggleGallery('gallery-wedding')">ESKÜVŐK</button>
+                    </div>
                 </div>
             </div>
-            <div class="portfolio__card">
-                <img src="Picture/portfolio_2.jpg" alt="portfolio football">
-                <div class="portfolio__content">
-                    <button class="btn">VIEW PORTFOLIO</button>
+
+            <!-- 2. EZ PEDIG KÜLÖN ALATTA VAN: A LENYÍLÓ GALÉRIÁK KONTÉNERÉJE -->
+            <div class="portfolio__galleries">
+                
+                <!-- Rendezvény Galéria -->
+                <div class="gallery__container" id="gallery-party">
+                    <h3 class="gallery__title">Rendezvény fotók</h3>
+                    <div class="gallery__grid">
+                        <img src="Picture/portfolio_1.jpg" alt="Party 1" class="gallery__thumb">
+                        <img src="Picture/portfolio_2.jpg" alt="Party 2" class="gallery__thumb">
+                        <img src="Picture/portfolio_3.jpg" alt="Party 3" class="gallery__thumb">
+                        <img src="Picture/portfolio_1.jpg" alt="Party 4" class="gallery__thumb">
+                    </div>
                 </div>
-            </div>
-            <div class="portfolio__card">
-                <img src="Picture/portfolio_3.jpg" alt="portfolio wedding">
-                <div class="portfolio__content">
-                    <button class="btn">VIEW PORTFOLIO</button>
+
+                <!-- Sport Galéria -->
+                <div class="gallery__container" id="gallery-sport">
+                    <h3 class="gallery__title">Sport fotók</h3>
+                    <div class="gallery__grid">
+                        <img src="Picture/portfolio_2.jpg" alt="Sport 1" class="gallery__thumb">
+                        <img src="Picture/portfolio_1.jpg" alt="Sport 2" class="gallery__thumb">
+                    </div>
                 </div>
+
+                <!-- Esküvő Galéria -->
+                <div class="gallery__container" id="gallery-wedding">
+                    <h3 class="gallery__title">Esküvői fotók</h3>
+                    <div class="gallery__grid">
+                        <img src="Picture/portfolio_3.jpg" alt="Wedding 1" class="gallery__thumb">
+                        <img src="Picture/portfolio_2.jpg" alt="Wedding 2" class="gallery__thumb">
+                        <img src="Picture/portfolio_1.jpg" alt="Wedding 3" class="gallery__thumb">
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
     <!-- #endregion -->
 
     <!-- #region 5. AJÁNLÁSOK SZEKCIÓ (TESTIMONIALS SLIDER) -->
@@ -286,25 +327,25 @@
                 </div>
             </form>
             <!-- SIKERES KÜLDÉS UTÁNI ÜZENET -->
-        <div class="quote__success" id="quoteSuccess">
+            <div class="quote__success" id="quoteSuccess">
 
-            <div class="quote__success_icon">
-                <i class="ri-checkbox-circle-line"></i>
+                <div class="quote__success_icon">
+                    <i class="ri-checkbox-circle-line"></i>
+                </div>
+
+                <h3>Köszönöm a megkeresést!</h3>
+
+                <p>
+                    Az árajánlatkérésed sikeresen elküldted.
+                    Hamarosan felveszem veled a kapcsolatot
+                    a megadott elérhetőségeiden.
+                </p>
+
+                <p>
+                    Addig is köszönöm a türelmed!
+                </p>
+
             </div>
-
-            <h3>Köszönöm a megkeresést!</h3>
-
-            <p>
-                Az árajánlatkérésed sikeresen elküldted.
-                Hamarosan felveszem veled a kapcsolatot
-                a megadott elérhetőségeiden.
-            </p>
-
-            <p>
-                Addig is köszönöm a türelmed!
-            </p>
-
-        </div>
 
         </div>
 
@@ -685,6 +726,14 @@
     <script src="main.js"></script>
     <!-- #endregion -->
 
+
+    <!-- TESTRESZABOTT ARANY LIGHTBOX (Alapból rejtve) -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox__close"><i class="ri-close-line"></i></span>
+        <span class="lightbox__arrow lightbox__prev"><i class="ri-arrow-left-s-line"></i></span>
+        <img src="" alt="Nagyított kép" class="lightbox__img" id="lightbox-img">
+        <span class="lightbox__arrow lightbox__next"><i class="ri-arrow-right-s-line"></i></span>
+    </div>
 </body>
 
 </html>

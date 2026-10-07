@@ -236,69 +236,104 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* #region 5. PORTFÓLIÓ SZEKCIÓ (PORTFOLIO) */
-.portfolio__container{
-    background-color: var(--white);
+/* --- PORTFÓLIÓ LENYÍLÓ GALÉRIA RÁCS --- */
+.portfolio__galleries {
+    margin-top: 3rem;
+    width: 100%;
 }
 
+.gallery__container {
+    display: none; /* Alapból elrejtjük */
+}
+
+.gallery__title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-family: var(--header-font);
+}
 
 .portfolio__grid {
-    margin-top: 2rem;
     display: grid;
-    gap: 1rem;
+    /* Automatikusan egymás mellé pakolja a kártyákat, min 300px szélességgel */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-.portfolio__card {
-    position: relative;
-    isolation: isolate;
+.gallery__thumb {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.portfolio__card::after {
-    position: absolute;
-    bottom: 2rem;
-    left: 25%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    font-family: var(--header-font);
-    color: var(--white);
+.gallery__thumb:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.portfolio__card:nth-child(1)::after {
-    content: "Party";
-}
-
-.portfolio__card:nth-child(2)::after {
-    content: "Football";
-}
-
-.portfolio__card:nth-child(3)::after {
-    content: "Wedding";
-}
-
-.portfolio__content {
-    position: absolute;
+/* --- TESTRESZABOTT ARANY LIGHTBOX STÍLUSOK --- */
+.lightbox {
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Koromfekete, prémium sötétítés */
+    display: none; /* Alapból rejtve */
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: 0.3s;
-    z-index: 1;
+    align-items: center;
+    z-index: 9999; /* Mindig minden felett legyen */
 }
 
-.portfolio__card:hover .portfolio__content {
-    opacity: 1;
+.lightbox img.lightbox__img {
+    max-width: 85%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* --- KIS EXTRA HELY A PORTFÓLIÓ UGRÁSNÁL --- */
-#portfolio {
-    scroll-margin-top: 75px; 
+/* Bezáró X és nyilak alapstílusa (Arany színnel!) */
+.lightbox__close,
+.lightbox__arrow {
+    position: absolute;
+    color: #d4af37; /* A te elegáns arany színed */
+    cursor: pointer;
+    font-size: 2.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    user-select: none;
 }
-/* #endregion */
+
+.lightbox__close:hover,
+.lightbox__arrow:hover {
+    transform: scale(1.15);
+    color: #f3e5ab; /* Világosabb arany ragyogás hoverre */
+}
+
+.lightbox__close {
+    top: 30px;
+    right: 40px;
+}
+
+.lightbox__prev {
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox__next {
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#portfolio{
+    background-color: var(--white);
+}
 
 /* #region 6. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS) */
 .client__container {
