@@ -24,7 +24,7 @@ html {
 
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: var(--white);
+    background-color: var(--text-dark);
     color: var(--text-dark);
     margin: 0;
     padding: 0;
@@ -175,6 +175,7 @@ nav.nav--scrolled {
 /* #region 4. RÓLUNK SZEKCIÓ (ABOUT) */
 .about__container{
     margin-top: 0rem;
+    background-color: var(--white);
 }
 
 .about__title {
@@ -236,6 +237,11 @@ nav.nav--scrolled {
 /* #endregion */
 
 /* #region 5. PORTFÓLIÓ SZEKCIÓ (PORTFOLIO) */
+.portfolio__container{
+    background-color: var(--white);
+}
+
+
 .portfolio__grid {
     margin-top: 2rem;
     display: grid;
@@ -440,7 +446,7 @@ nav.nav--scrolled {
 
 /* #region 8. EGYEDI ÁRAJÁNLAT (QUOTE FORM) */
 .quote {
-    background-color: transparent; 
+    background-color: var(--white); 
     padding: 5rem 1rem;
 }
 
