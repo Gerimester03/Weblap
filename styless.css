@@ -43,6 +43,7 @@ a {
     text-decoration: none;
     transition: 0.3s;
 }
+
 /* #endregion */
 
 /* #region 2. ÁLTALÁNOS OSZTÁLYOK ÉS GOMBOK */
@@ -173,11 +174,13 @@ nav.nav--scrolled {
 /* #endregion */
 
 /* #region 4. RÓLUNK SZEKCIÓ (ABOUT) */
-.about__container{
-    margin-top: 0rem;
+.about__container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 5rem 1rem;
     background-color: var(--white);
 }
-
 .about__title {
     margin-bottom: 3rem;
 }
@@ -236,7 +239,7 @@ nav.nav--scrolled {
 }
 /* #endregion */
 
-/* --- PORTFÓLIÓ LENYÍLÓ GALÉRIA RÁCS --- */
+/* #region 5. PORTFÓLIÓ LENYÍLÓ GALÉRIA RÁCS */
 .portfolio__galleries {
     margin-top: 3rem;
     width: 100%;
@@ -334,15 +337,17 @@ nav.nav--scrolled {
 #portfolio{
     background-color: var(--white);
 }
+/* #endregion */
 
 /* #region 6. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS) */
 .client__container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
     padding: 4rem 1rem 3rem;
     background-color: var(--white);
     position: relative;
     z-index: 5;
-    clear: both;
-    width: 100%;
     box-sizing: border-box;
     display: block;
 }
@@ -590,13 +595,8 @@ nav.nav--scrolled {
 
 /* #region 8. GYAKORI KÉRDÉSEK (FAQ) */
 .faq {
-    background-color: var(--text-dark); /* Ez teszi a hátteret sötétté */
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    background-color: var(--text-dark);
+    width: 100%;
     display: block;
 }
 
