@@ -301,26 +301,37 @@ nav.nav--scrolled {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Bezáró X és nyilak alapstílusa (Arany színnel!) */
-.lightbox__close,
+/* Lapozó nyilak alapstílusa (Stabilak maradnak, csak a színük változik) */
 .lightbox__arrow {
     position: absolute;
-    color: #d4af37; /* A te elegáns arany színed */
+    color: var(--white);
     cursor: pointer;
     font-size: 2.5rem;
-    transition: transform 0.2s ease, color 0.2s ease;
+    z-index: 10000;
+    transition: color 0.3s ease; /* Csak a szín váltódik simán, nincs méretugrás! */
     user-select: none;
 }
 
-.lightbox__close:hover,
 .lightbox__arrow:hover {
-    transform: scale(1.15);
-    color: #f3e5ab; /* Világosabb arany ragyogás hoverre */
+    color: var(--gold); /* Világosabb arany ragyogás hoverre, de a gép elmozdulása nélkül */
 }
 
+/* Bezáró X gomb: Pontosan a menü gomb stílusára hangolva, méretben és hoverrel */
 .lightbox__close {
+    position: absolute;
     top: 30px;
     right: 40px;
+    color: var(--white); /* Fehér szín, mint a menüben */
+    font-size: 1.8rem;   /* Finomabb, elegánsabb méret (közel a menü 1.5rem-jéhez) */
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+.lightbox__close:hover {
+    color: var(--gold);    /* Hoverre felveszi az arany színt, hogy szépen mutasson */
+    transform: scale(1.1);
 }
 
 .lightbox__prev {
