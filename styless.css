@@ -215,8 +215,11 @@ nav.nav--scrolled {
 }
 
 .about__content .section__description {
+    max-width: 800px; 
+    margin: 0 auto 1.5rem auto;
     text-align: center;
-    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.75rem;
 }
 
 .about__signature {
@@ -344,6 +347,56 @@ nav.nav--scrolled {
     right: 30px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+
+/* --- PORTFÓLIÓ KÁRTYÁK ÉS GOMBOK (Az űrlap gomb stílusára hangolva) --- */
+
+.portfolio__card {
+    background-color: transparent; /* Nincs külön háttérszín a kártyának */
+    border: none;                   /* Nincs keret */
+    box-shadow: none;               /* Nincs árnyék a kártya körül */
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio__card img {
+    width: 100%;
+    height: auto;       /* Visszakapja az eredeti arányait, nem lesz összenyomva */
+    object-fit: contain;
+    border-radius: 8px; /* A kép sarkai maradnak szépen lekerekítve */
+}
+
+.portfolio__content {
+    padding: 1.5rem 0rem; /* Kicsit igazítunk a térközön, ha nincs doboz */
+    text-align: center;
+    background-color: transparent; /* A tartalom alatt sem kell háttér */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* A portfólió gombok stílusa (marad a kért forma) */
+.portfolio__btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: var(--text-dark);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portfolio__btn:hover {
+    background-color: var(--text-dark) !important;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
 }
 #portfolio{
     background-color: var(--white);
@@ -927,6 +980,13 @@ nav.nav--scrolled {
     .quote__form {
         padding: 2rem 1.5rem;
     }
+
+    .portfolio__card img {
+        max-height: 280px;  
+          
+    }
+
+
 }
 
 /* === TABLET NÉZET (541px és felette) === */
