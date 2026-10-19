@@ -89,34 +89,40 @@
     <section class="portfolio" id="portfolio">
         <div class="section__container portfolio__container">
             <h2 class="section__header">~Portfolio~</h2>
-            
+
             <!-- 1. EZ A FENTI KÁRTYÁK RÁCSA (Ez marad fent érintetlenül) -->
             <div class="portfolio__grid">
+                <!-- 1. Kártya: Rendezvények -->
                 <div class="portfolio__card">
-                    <img src="Picture/portfolio_1.jpg" alt="portfolio party">
+                    <img src="Picture/portfolio_1.jpg" alt="Rendezvények">
+                    <h3 class="portfolio__title">RENDEZVÉNYEK</h3>
                     <div class="portfolio__content">
-                        <button class="btn portfolio__btn" onclick="toggleGallery('gallery-party')">RENDEZVÉNYEK</button>
+                        <button class="portfolio__btn" onclick="toggleGallery('gallery-party')">MEGTEKINTÉS</button>
                     </div>
                 </div>
-                
+
+                <!-- 2. Kártya: Sportfotózás -->
                 <div class="portfolio__card">
-                    <img src="Picture/portfolio_2.jpg" alt="portfolio sport">
+                    <img src="Picture/portfolio_2.jpg" alt="Sportfotózás">
+                    <h3 class="portfolio__title">SPORTFOTÓZÁS</h3>
                     <div class="portfolio__content">
-                        <button class="btn portfolio__btn" onclick="toggleGallery('gallery-sport')">SPORTFOTÓZÁS</button>
+                        <button class="portfolio__btn" onclick="toggleGallery('gallery-sport')">MEGTEKINTÉS</button>
                     </div>
                 </div>
-                
+
+                <!-- 3. Kártya: Esküvők -->
                 <div class="portfolio__card">
-                    <img src="Picture/portfolio_3.jpg" alt="portfolio wedding">
+                    <img src="Picture/portfolio_3.jpg" alt="Esküvők">
+                    <h3 class="portfolio__title">ESKÜVŐK</h3>
                     <div class="portfolio__content">
-                        <button class="btn portfolio__btn" onclick="toggleGallery('gallery-wedding')">ESKÜVŐK</button>
+                        <button class="portfolio__btn" onclick="toggleGallery('gallery-wedding')">MEGTEKINTÉS</button>
                     </div>
                 </div>
             </div>
 
             <!-- 2. EZ PEDIG KÜLÖN ALATTA VAN: A LENYÍLÓ GALÉRIÁK KONTÉNERÉJE -->
             <div class="portfolio__galleries">
-                
+
                 <!-- Rendezvény Galéria -->
                 <div class="gallery__container" id="gallery-party">
                     <h3 class="gallery__title">Rendezvény fotók</h3>
@@ -388,7 +394,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                A foglalási időszak a fotózás típusától függ. Esküvők és nagyobb rendezvények esetében érdemes a nagy nap előtt 6–12 hónappal jelentkezni, mivel a tavaszi-nyári szezon hétvégéi hamar betelnek. Kisebb fotózások (például portré, sport vagy páros fotózás) esetén általában elegendő 2–4 héttel előre egyeztetnünk. Mindenképp azt javaslom, hogy amint megvan az elképzelésed, vedd fel velem a kapcsolatot, hogy biztosan találjunk megfelelő időpontot!
+                                A foglalási időszak a fotózás típusától függ. Esküvők és nagyobb rendezvények esetében
+                                érdemes a nagy nap előtt 6–12 hónappal jelentkezni, mivel a tavaszi-nyári szezon
+                                hétvégéi hamar betelnek. Kisebb fotózások (például portré, sport vagy páros fotózás)
+                                esetén általában elegendő 2–4 héttel előre egyeztetnünk. Mindenképp azt javaslom, hogy
+                                amint megvan az elképzelésed, vedd fel velem a kapcsolatot, hogy biztosan találjunk
+                                megfelelő időpontot!
                             </p>
                         </div>
 
@@ -404,7 +415,11 @@
 
                         <div class="faq__answer">
                             <p>
-                                Igen, a naptáramban az időpontod a foglaló befizetésével (és nagyobb eseményeknél a megbízási szerződés elfogadásával) válik hivatalosan is véglegessé és garantálttá. A foglaló mértéke általában a végösszeg 20–30%-a, amely természetesen levonásra kerül a fotózás végső díjából. Amíg ez nem történik meg, az időpontot fenntartom, de más érdeklődő is lefoglalhatja.
+                                Igen, a naptáramban az időpontod a foglaló befizetésével (és nagyobb eseményeknél a
+                                megbízási szerződés elfogadásával) válik hivatalosan is véglegessé és garantálttá. A
+                                foglaló mértéke általában a végösszeg 20–30%-a, amely természetesen levonásra kerül a
+                                fotózás végső díjából. Amíg ez nem történik meg, az időpontot fenntartom, de más
+                                érdeklődő is lefoglalhatja.
                             </p>
                         </div>
 
@@ -420,7 +435,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                Tudom, hogy az életben bármikor közbejöhet valami váratlan (például betegség, vagy szabadtéri fotózásnál a rossz időjárás). Ilyen esetekben rugalmas vagyok: lehetőség van az időpont egyszeri, díjmentes módosítására, amennyiben azt a fotózás előtt legalább 48 órával jelzed nekem. Végleges lemondás, vagy az utolsó pillanatban történő módosítás esetén azonban a foglaló visszafizetésére sajnos nincs mód, hiszen azt az időpontot másnak már nem tudom kiadni.
+                                Tudom, hogy az életben bármikor közbejöhet valami váratlan (például betegség, vagy
+                                szabadtéri fotózásnál a rossz időjárás). Ilyen esetekben rugalmas vagyok: lehetőség van
+                                az időpont egyszeri, díjmentes módosítására, amennyiben azt a fotózás előtt legalább 48
+                                órával jelzed nekem. Végleges lemondás, vagy az utolsó pillanatban történő módosítás
+                                esetén azonban a foglaló visszafizetésére sajnos nincs mód, hiszen azt az időpontot
+                                másnak már nem tudom kiadni.
                             </p>
                         </div>
 
@@ -436,7 +456,10 @@
 
                         <div class="faq__answer">
                             <p>
-                                A fennmaradó összeg kiegyenlítésére készpénzben a fotózás napján, vagy banki átutalással van lehetőség (legkésőbb a kész, kidolgozott képek átadásáig). Természetesen minden munkámról számlát állítok ki, így cégek és vállalkozások részére a céges átutalás is zökkenőmentesen megoldható.
+                                A fennmaradó összeg kiegyenlítésére készpénzben a fotózás napján, vagy banki átutalással
+                                van lehetőség (legkésőbb a kész, kidolgozott képek átadásáig). Természetesen minden
+                                munkámról számlát állítok ki, így cégek és vállalkozások részére a céges átutalás is
+                                zökkenőmentesen megoldható.
                             </p>
                         </div>
 
@@ -466,7 +489,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                A legfontosabb, hogy kényelmesen érezzétek magatokat abban, amit viseltek! Érdemes kerülni a hatalmas, feltűnő logókat, a neon színeket és a túlzottan sűrű, apró mintákat, mert ezek elvonják a figyelmet az arcotokról. Páros vagy családi fotózásnál nem kell teljesen egyformába öltözni; sokkal szebb a végeredmény, ha 2-3 egymással harmonizáló színt (például földszíneket, pasztell árnyalatokat) választotok. Ha bizonytalanok vagytok, a fotózás előtt szívesen segítek a ruhák összehangolásában!
+                                A legfontosabb, hogy kényelmesen érezzétek magatokat abban, amit viseltek! Érdemes
+                                kerülni a hatalmas, feltűnő logókat, a neon színeket és a túlzottan sűrű, apró mintákat,
+                                mert ezek elvonják a figyelmet az arcotokról. Páros vagy családi fotózásnál nem kell
+                                teljesen egyformába öltözni; sokkal szebb a végeredmény, ha 2-3 egymással harmonizáló
+                                színt (például földszíneket, pasztell árnyalatokat) választotok. Ha bizonytalanok
+                                vagytok, a fotózás előtt szívesen segítek a ruhák összehangolásában!
                             </p>
                         </div>
 
@@ -482,7 +510,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                Ezzel a vendégeim 90%-a így van az első percekben, úgyhogy egyáltalán nem kell izgulnotok! Az én feladatom, hogy feloldjam a feszültséget és végig vezesselek titeket a folyamaton. Nem kőmerev, feszengős pózokat fogunk erőltetni, hanem apró instrukciókat, játékos feladatokat adok (például sétáljatok egymás felé, vagy mondjatok valami vicceset a másiknak). Így valódi, őszinte pillanatokat és természetes mosolyokat tudok megörökíteni. Olyan lesz, mint egy laza séta, amit a végén még élvezni is fogtok!
+                                Ezzel a vendégeim 90%-a így van az első percekben, úgyhogy egyáltalán nem kell
+                                izgulnotok! Az én feladatom, hogy feloldjam a feszültséget és végig vezesselek titeket a
+                                folyamaton. Nem kőmerev, feszengős pózokat fogunk erőltetni, hanem apró instrukciókat,
+                                játékos feladatokat adok (például sétáljatok egymás felé, vagy mondjatok valami vicceset
+                                a másiknak). Így valódi, őszinte pillanatokat és természetes mosolyokat tudok
+                                megörökíteni. Olyan lesz, mint egy laza séta, amit a végén még élvezni is fogtok!
                             </p>
                         </div>
 
@@ -498,7 +531,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                Az időjárás az egyetlen, amit nem tudunk irányítani, de mindig van egy "B" tervünk. A fotózás előtti napokban folyamatosan figyeljük az előrejelzést. Ha tartós eső vagy vihar várható, természetesen rugalmasan és díjmentesen keresünk egy új, mindkettőnknek megfelelő időpontot. Ha az időpont nem csúsztatható, alternatív megoldásként átszervezhetjük a fotózást egy szép, bérelt napfény-stúdióba vagy más fedett, izgalmas helyszínre.
+                                Az időjárás az egyetlen, amit nem tudunk irányítani, de mindig van egy "B" tervünk. A
+                                fotózás előtti napokban folyamatosan figyeljük az előrejelzést. Ha tartós eső vagy vihar
+                                várható, természetesen rugalmasan és díjmentesen keresünk egy új, mindkettőnknek
+                                megfelelő időpontot. Ha az időpont nem csúsztatható, alternatív megoldásként
+                                átszervezhetjük a fotózást egy szép, bérelt napfény-stúdióba vagy más fedett, izgalmas
+                                helyszínre.
                             </p>
                         </div>
 
@@ -514,7 +552,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                Abszolút, sőt, kifejezetten ajánlom! Bármilyen személyes kiegészítő (egy kedvenc kalap, egy hangszer, vagy egy számotokra fontos tárgy) sokkal egyedibbé és "sajátotokká" teszi a fotókat. A házi kedvencek szintén hatalmas pluszt adnak az élményhez, így szabadtéri (vagy állatbarát stúdiós) fotózásra bátran elhozhatjátok őket. Annyit kérek csak, hogy ezt előre jelezzétek nekem, és érdemes egy kísérőt is magatokkal hozni, aki figyel a kutyusra/cicára abban a pár percben, amikor csak rólatok készülnek a képek.
+                                Abszolút, sőt, kifejezetten ajánlom! Bármilyen személyes kiegészítő (egy kedvenc kalap,
+                                egy hangszer, vagy egy számotokra fontos tárgy) sokkal egyedibbé és "sajátotokká" teszi
+                                a fotókat. A házi kedvencek szintén hatalmas pluszt adnak az élményhez, így szabadtéri
+                                (vagy állatbarát stúdiós) fotózásra bátran elhozhatjátok őket. Annyit kérek csak, hogy
+                                ezt előre jelezzétek nekem, és érdemes egy kísérőt is magatokkal hozni, aki figyel a
+                                kutyusra/cicára abban a pár percben, amikor csak rólatok készülnek a képek.
                             </p>
                         </div>
 
@@ -544,7 +587,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                A kidolgozott, átadott képek száma az általad választott fotózási csomagtól és a fotózás típusától függ. Egy rövidebb portré- vagy páros fotózás esetén általában 15–30 gondosan utómunkázott képet adok át, míg egy egész napos esküvő vagy nagyobb rendezvény esetében ez a szám 300–600 kép is lehet. A konkrét ajánlatban minden esetben pontosan feltüntetem a garantált képszámot, de ha egy fotózáson több zseniális, megismételhetetlen pillanat születik, azokat sem szoktam visszatartani!
+                                A kidolgozott, átadott képek száma az általad választott fotózási csomagtól és a fotózás
+                                típusától függ. Egy rövidebb portré- vagy páros fotózás esetén általában 15–30 gondosan
+                                utómunkázott képet adok át, míg egy egész napos esküvő vagy nagyobb rendezvény esetében
+                                ez a szám 300–600 kép is lehet. A konkrét ajánlatban minden esetben pontosan feltüntetem
+                                a garantált képszámot, de ha egy fotózáson több zseniális, megismételhetetlen pillanat
+                                születik, azokat sem szoktam visszatartani!
                             </p>
                         </div>
 
@@ -560,7 +608,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                A minőségi utómunka időt igényel, hiszen minden egyes átadott fotót egyenként szerkesztek és finomhangolok, hogy a végeredmény tökéletes legyen. Kisebb fotózások (portré, sport, páros) esetén a kész anyagot általában 1–2 héten belül átadom. Nagyobb eseményeknél és esküvőknél a vállalási határidő – a szezon sűrűségétől függően – 4–6 hét szokott lenni. Természetesen esküvők és nagyobb rendezvények után igyekszem néhány napon belül küldeni egy kis ízelítőt a legjobb pillanatokból!
+                                A minőségi utómunka időt igényel, hiszen minden egyes átadott fotót egyenként
+                                szerkesztek és finomhangolok, hogy a végeredmény tökéletes legyen. Kisebb fotózások
+                                (portré, sport, páros) esetén a kész anyagot általában 1–2 héten belül átadom. Nagyobb
+                                eseményeknél és esküvőknél a vállalási határidő – a szezon sűrűségétől függően – 4–6 hét
+                                szokott lenni. Természetesen esküvők és nagyobb rendezvények után igyekszem néhány napon
+                                belül küldeni egy kis ízelítőt a legjobb pillanatokból!
                             </p>
                         </div>
 
@@ -576,7 +629,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                Nem, nyers (RAW) és retusálatlan képeket semmilyen esetben sem adok át. A fotózás csak a munka egyik fele; a végső, rám jellemző színvilágot, hangulatot és stílust a gondos utómunka (fényelés, színkorrekció, retusálás) adja meg. Egy nyers fájl olyan, mint egy séfnek a nyers alapanyag a nevemhez és a portfóliómhoz pedig csak a maximális minőségű, teljesen "készre főzött" vizuális élmény társulhat. Bízom benne, hogy pont az eddigi kidolgozott képeim stílusa miatt választottál engem!
+                                Nem, nyers (RAW) és retusálatlan képeket semmilyen esetben sem adok át. A fotózás csak a
+                                munka egyik fele; a végső, rám jellemző színvilágot, hangulatot és stílust a gondos
+                                utómunka (fényelés, színkorrekció, retusálás) adja meg. Egy nyers fájl olyan, mint egy
+                                séfnek a nyers alapanyag a nevemhez és a portfóliómhoz pedig csak a maximális minőségű,
+                                teljesen "készre főzött" vizuális élmény társulhat. Bízom benne, hogy pont az eddigi
+                                kidolgozott képeim stílusa miatt választottál engem!
                             </p>
                         </div>
 
@@ -592,7 +650,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                A kész, utómunkázott képeket nagy felbontású, nyomdai minőségű, vízjel nélküli JPEG formátumban adom át. A képek letöltéséhez egy elegáns, privát online galériát hozok létre nektek. Ezt a linket könnyedén megoszthatjátok a családdal és a barátokkal is, és kényelmesen le tudjátok tölteni róla a képeket számítógépre vagy telefonra anélkül, hogy a minőségük romlana (mint ahogy az a Messengeren vagy Facebookon történne).
+                                A kész, utómunkázott képeket nagy felbontású, nyomdai minőségű, vízjel
+                                nélküli JPEG formátumban adom át. A képek letöltéséhez egy elegáns, privát online
+                                galériát hozok létre nektek. Ezt a linket könnyedén megoszthatjátok a családdal és a
+                                barátokkal is, és kényelmesen le tudjátok tölteni róla a képeket számítógépre vagy
+                                telefonra anélkül, hogy a minőségük romlana (mint ahogy az a Messengeren vagy Facebookon
+                                történne).
                             </p>
                         </div>
 
@@ -622,7 +685,10 @@
 
                         <div class="faq__answer">
                             <p>
-                                Természetesen, sőt, kifejezetten szeretek új helyszíneket és izgalmas környezeteket felfedezni! Bár a bázisom Budapesten található, az ország bármely pontjára, sőt külföldi helyszínekre is örömmel utazom, legyen szó esküvőről, sporteseményről vagy egy különleges portréfotózásról.
+                                Természetesen, sőt, kifejezetten szeretek új helyszíneket és izgalmas környezeteket
+                                felfedezni! Bár a bázisom Budapesten található, az ország bármely pontjára, sőt külföldi
+                                helyszínekre is örömmel utazom, legyen szó esküvőről, sporteseményről vagy egy
+                                különleges portréfotózásról.
                             </p>
                         </div>
 
@@ -638,7 +704,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                Az árajánlat minden esetben egyedi, és a kiszállási díjat a fotózás helyszíne alapján előre, teljesen transzparensen egyeztetjük. Szarvas vonzáskörzetében a kiszállás általában díjmentes. Távolabbi helyszínek esetén egy korrekt, kilométer alapú útiköltséggel érdemes számolni. Szállásköltség csak kivételes esetekben merül fel, ha a helyszín nagyon távol esik, és a fotózás (például egy esküvő) késő éjszakába vagy hajnalba nyúlik, esetleg több napos rendezvényről van szó.
+                                Az árajánlat minden esetben egyedi, és a kiszállási díjat a fotózás helyszíne alapján
+                                előre, teljesen transzparensen egyeztetjük. Szarvas vonzáskörzetében a kiszállás
+                                általában díjmentes. Távolabbi helyszínek esetén egy korrekt, kilométer alapú
+                                útiköltséggel érdemes számolni. Szállásköltség csak kivételes esetekben merül fel, ha a
+                                helyszín nagyon távol esik, és a fotózás (például egy esküvő) késő éjszakába vagy
+                                hajnalba nyúlik, esetleg több napos rendezvényről van szó.
                             </p>
                         </div>
 
@@ -654,7 +725,11 @@
 
                         <div class="faq__answer">
                             <p>
-                                Nagy örömmel! Az évek során számos csodálatos szabadtéri helyszínt és professzionális, gyönyörűen berendezett napfény-stúdiót ismertem meg. Miután átbeszéltük, hogy pontosan milyen hangulatú képeket szeretnétek (például letisztult elegáns, romantikus természetközeli, vagy épp modern indusztriális), több konkrét opciót is fogok javasolni képekkel illusztrálva, amikből közösen választhatjuk ki a legideálisabbat.
+                                Nagy örömmel! Az évek során számos csodálatos szabadtéri helyszínt és professzionális,
+                                gyönyörűen berendezett napfény-stúdiót ismertem meg. Miután átbeszéltük, hogy pontosan
+                                milyen hangulatú képeket szeretnétek (például letisztult elegáns, romantikus
+                                természetközeli, vagy épp modern indusztriális), több konkrét opciót is fogok javasolni
+                                képekkel illusztrálva, amikből közösen választhatjuk ki a legideálisabbat.
                             </p>
                         </div>
 
@@ -670,7 +745,12 @@
 
                         <div class="faq__answer">
                             <p>
-                                Alapesetben a fotózási csomagjaim a stúdiók bérleti díját nem tartalmazzák, mivel a különböző stúdiók árai, méretei és feltételei nagyon eltérőek lehetnek (általában 8.000 - 15.000 Ft / óra között mozognak). Miután közösen kiválasztottuk a nektek leginkább tetsző termet, a stúdió bérleti díja külön kerül felszámításra. Magát a foglalás adminisztrációját és a stúdióval való egyeztetést természetesen teljes egészében én intézem, nektek ezzel nem lesz gondotok!
+                                Alapesetben a fotózási csomagjaim a stúdiók bérleti díját nem tartalmazzák, mivel a
+                                különböző stúdiók árai, méretei és feltételei nagyon eltérőek lehetnek (általában 8.000
+                                - 15.000 Ft / óra között mozognak). Miután közösen kiválasztottuk a nektek leginkább
+                                tetsző termet, a stúdió bérleti díja külön kerül felszámításra. Magát a foglalás
+                                adminisztrációját és a stúdióval való egyeztetést természetesen teljes egészében én
+                                intézem, nektek ezzel nem lesz gondotok!
                             </p>
                         </div>
 
@@ -737,7 +817,7 @@
 
     <!-- TESTRESZABOTT ARANY LIGHTBOX (A menühöz igazított bezáró X-el) -->
     <div class="lightbox" id="lightbox">
-        <span class="lightbox__close"><i class="ri-close-fill"></i></span> <!-- Itt állíthatod át az ikont, hogy egyezzen a menüvel -->
+        <span class="lightbox__close"><i class="ri-close-fill"></i></span>
         <span class="lightbox__arrow lightbox__prev"><i class="ri-arrow-left-s-line"></i></span>
         <img src="" alt="Nagyított kép" class="lightbox__img" id="lightbox-img">
         <span class="lightbox__arrow lightbox__next"><i class="ri-arrow-right-s-line"></i></span>

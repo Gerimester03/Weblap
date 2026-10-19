@@ -243,6 +243,7 @@ nav.nav--scrolled {
 /* #endregion */
 
 /* #region 5. PORTFÓLIÓ LENYÍLÓ GALÉRIA RÁCS */
+
 .portfolio__galleries {
     margin-top: 3rem;
     width: 100%;
@@ -262,9 +263,8 @@ nav.nav--scrolled {
 
 .portfolio__grid {
     display: grid;
-    /* Automatikusan egymás mellé pakolja a kártyákat, min 300px szélességgel */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2rem;
+    gap: 0.5rem;
     margin-top: 2rem;
 }
 
@@ -316,7 +316,7 @@ nav.nav--scrolled {
 }
 
 .lightbox__arrow:hover {
-    color: var(--gold); /* Világosabb arany ragyogás hoverre, de a gép elmozdulása nélkül */
+    color: var(--gold); /* Világosabb arany ragyogás hoverre */
 }
 
 /* Bezáró X gomb: Pontosan a menü gomb stílusára hangolva, méretben és hoverrel */
@@ -324,8 +324,8 @@ nav.nav--scrolled {
     position: absolute;
     top: 30px;
     right: 40px;
-    color: var(--white); /* Fehér szín, mint a menüben */
-    font-size: 1.8rem;   /* Finomabb, elegánsabb méret (közel a menü 1.5rem-jéhez) */
+    color: var(--white);
+    font-size: 1.8rem;
     cursor: pointer;
     z-index: 10000;
     transition: color 0.3s ease, transform 0.2s ease;
@@ -333,7 +333,7 @@ nav.nav--scrolled {
 }
 
 .lightbox__close:hover {
-    color: var(--gold);    /* Hoverre felveszi az arany színt, hogy szépen mutasson */
+    color: var(--gold);
     transform: scale(1.1);
 }
 
@@ -349,58 +349,69 @@ nav.nav--scrolled {
     transform: translateY(-50%);
 }
 
-
-/* --- PORTFÓLIÓ KÁRTYÁK ÉS GOMBOK (Az űrlap gomb stílusára hangolva) --- */
+/* --- PORTFÓLIÓ KÁRTYÁK ÉS GOMBOK (Az igazi, prémium KÁRTYA stílus) --- */
 
 .portfolio__card {
-    background-color: transparent; /* Nincs külön háttérszín a kártyának */
-    border: none;                   /* Nincs keret */
-    box-shadow: none;               /* Nincs árnyék a kártya körül */
+    background-color: transparent; 
+    border-radius: 16px;           /* Kellemes, modern lekerekítés az egész doboznak */
+    padding: 0;                 /* Belső térköz: ez ad egy szép "keretet" a kép körül */
+    box-shadow: none; /* Lágy, térbeli árnyék, hogy kiemelkedjen az oldalból */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .portfolio__card img {
     width: 100%;
-    height: auto;       /* Visszakapja az eredeti arányait, nem lesz összenyomva */
-    object-fit: contain;
-    border-radius: 8px; /* A kép sarkai maradnak szépen lekerekítve */
+    height: auto;
+    object-fit: cover;             
+    border-radius: 12px;           /* Kicsit kisebb lekerekítés, hogy tökéletesen illeszkedjen a kártyába */
 }
 
 .portfolio__content {
-    padding: 1.5rem 0rem; /* Kicsit igazítunk a térközön, ha nincs doboz */
-    text-align: center;
-    background-color: transparent; /* A tartalom alatt sem kell háttér */
+    padding: 0; /* Eltüntetjük a felesleges belső űrt */
+    margin-bottom: 1.5rem; /* Alul hagyunk egy kis teret, hogy ne lógjon ki teljesen a kártyából */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
+    width: 100%;
 }
 
-/* A portfólió gombok stílusa (marad a kért forma) */
+/* A portfólió gombok stílusa (a kártyán belül) */
 .portfolio__btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.05rem;
+    width: auto;             /* Nem akarja már kitölteni a teljes kártyát */
+    min-width: 160px;        /* Egy csinos, rövidebb fix méret */
+    padding: 0.6rem 1.5rem;  /* Sokkal vékonyabb lett (kevesebb térköz fent/lent) */
+    font-size: 0.85rem;      /* Finomabb, kisebb betűméret a gombon belül */
     font-weight: 600;
-    letter-spacing: 1px;
-    background-color: var(--text-dark);
+    letter-spacing: 1.5px;
+    background-color: var(--text-dark); 
     color: var(--white);
-    border-radius: 5px;
+    border-radius: 8px;      /* Elegáns, enyhe lekerekítés */
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+.portfolio__title {
+    color: var(--text-dark);
+    font-size: 1.1rem; /* Megnöveltük a méretét (korábban 1.1 - 1.2 volt) */
+    font-weight: 700;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+}
 
 .portfolio__btn:hover {
-    background-color: var(--text-dark) !important;
+    background-color: var(--text-dark) !important; /* Erőszakkal megtartjuk a sötét hátteret */
     text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;      /* Kicsit lejjebb tolja a vonalat a szövegtől */
+    text-decoration-thickness: 2px;  /* Határozott, 2px vastag vonal */
 }
-#portfolio{
+
+#portfolio {
     background-color: var(--white);
 }
+
 /* #endregion */
 
 /* #region 6. VÉLEMÉNYEK SZEKCIÓ (TESTIMONIALS) */
