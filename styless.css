@@ -56,7 +56,7 @@ a {
 .section__header {
     margin-bottom: 1rem;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 600; 
     font-family: var(--header-font);
     color: var(--text-dark);
     text-align: center;
@@ -87,10 +87,13 @@ a {
 
 /* Kattintáskor a menü nem takarja ki a tartalmat */
 #about,
+#portfolio,
 #service,
 #client,
+#faq,
+#quote,
 #contact {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 85px;
 }
 /* #endregion */
 
@@ -250,7 +253,8 @@ nav.nav--scrolled {
 }
 
 .gallery__container {
-    display: none; /* Alapból elrejtjük */
+    display: none; 
+    scroll-margin-top: 120px ;
 }
 
 .gallery__title {
@@ -259,6 +263,7 @@ nav.nav--scrolled {
     color: var(--text-dark);
     margin-bottom: 2rem;
     font-family: var(--header-font);
+    font-weight: 500;
 }
 
 .portfolio__grid {
@@ -512,7 +517,6 @@ nav.nav--scrolled {
 /* #region 7. EGYEDI ÁRAJÁNLAT (QUOTE FORM) */
 .quote {
     background-color: var(--white); 
-    padding: 5rem 1rem;
 }
 
 .quote__container .section__header {
@@ -798,9 +802,7 @@ nav.nav--scrolled {
 .faq__question:hover span {
     border-color: var(--white);
 }
-#faq {
-    scroll-margin-top: 75px; 
-}
+
 /* #endregion */
 
 /* #region 9. GALÉRIA SZEKCIÓ (GALLERY) */

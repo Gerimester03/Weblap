@@ -188,26 +188,36 @@ if (clientSlider && prevBtn && nextBtn) {
 }
 //#endregion
 
+//#region 6. PORTFÓLIÓ GALÉRIA ÉS LIGHTBOX VEZÉRLÉS
 
-
-//#region PORTFÓLIÓ GALÉRIA ÉS LIGHTBOX VEZÉRLÉS
-
+// 1. Lenyíló galéria kezelése
 // 1. Lenyíló galéria kezelése
 function toggleGallery(galleryId) {
     const allGalleries = document.querySelectorAll('.gallery__container');
     const selectedGallery = document.getElementById(galleryId);
     
+    // Ha a galéria éppen nyitva van, akkor most BEZÁRJUK
     if (selectedGallery.style.display === 'block') {
         selectedGallery.style.display = 'none';
+        
+        // Visszagörgetés a Portfolio szekcióhoz finom animációval
+        const portfolioSection = document.getElementById("portfolio");
+        if (portfolioSection) {
+            portfolioSection.scrollIntoView({ behavior: "smooth" });
+        }
         return;
     }
 
+    // Ha a galéria eddig rejtve volt, akkor KINYITJUK
+    // Előbb bezárjuk az összes többit
     allGalleries.forEach(gallery => {
         gallery.style.display = 'none';
     });
 
+    // Kinyitjuk a kiválasztottat
     selectedGallery.style.display = 'block';
 
+    // Finom görgetés magához a kinyitott galériához (a címmel együtt)
     setTimeout(() => {
         selectedGallery.scrollIntoView({ 
             behavior: 'smooth', 
