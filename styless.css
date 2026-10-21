@@ -369,9 +369,10 @@ nav.nav--scrolled {
 
 .portfolio__card img {
     width: 100%;
-    height: auto;
-    object-fit: cover;             
-    border-radius: 12px;           /* Kicsit kisebb lekerekítés, hogy tökéletesen illeszkedjen a kártyába */
+    aspect-ratio: 3 / 4;           /* Ez kényszeríti mindhárom képet ugyanabba az álló arányba */
+    object-fit: cover;             /* Biztosítja, hogy a kép kitöltse a keretet torzulás nélkül */
+    border-radius: 12px;           
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio__content {

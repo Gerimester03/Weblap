@@ -191,7 +191,6 @@ if (clientSlider && prevBtn && nextBtn) {
 //#region 6. PORTFÓLIÓ GALÉRIA ÉS LIGHTBOX VEZÉRLÉS
 
 // 1. Lenyíló galéria kezelése
-// 1. Lenyíló galéria kezelése
 function toggleGallery(galleryId) {
     const allGalleries = document.querySelectorAll('.gallery__container');
     const selectedGallery = document.getElementById(galleryId);
@@ -208,7 +207,6 @@ function toggleGallery(galleryId) {
         return;
     }
 
-    // Ha a galéria eddig rejtve volt, akkor KINYITJUK
     // Előbb bezárjuk az összes többit
     allGalleries.forEach(gallery => {
         gallery.style.display = 'none';
@@ -279,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Billentyűzet támogatás (ESC-re bezárás, bal/jobb nyíllal lapozás)
     document.addEventListener('keydown', (e) => {
+        // 1. Ha a Lightbox (képnagyító) van nyitva
         if (lightbox.style.display === 'flex') {
             if (e.key === 'Escape') {
                 lightbox.style.display = 'none';
@@ -287,7 +286,29 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (e.key === 'ArrowLeft') {
                 prevBtn.click();
             }
+        } 
+        // 2. Ha a Lightbox NINCS nyitva, de megnyomják az ESC-t
+        else if (e.key === 'Escape') {
+            const allGalleries = document.querySelectorAll('.gallery__container');
+            let wasAnyGalleryOpen = false;
+
+            // Megkeressük, van-e nyitott galéria, és ha igen, bezárjuk
+            allGalleries.forEach(gallery => {
+                if (gallery.style.display === 'block') {
+                    gallery.style.display = 'none';
+                    wasAnyGalleryOpen = true;
+                }
+            });
+
+            // Ha zártunk be galériát, elegánsan visszagörgetünk a portfólió kártyákhoz
+            if (wasAnyGalleryOpen) {
+                const portfolioSection = document.getElementById("portfolio");
+                if (portfolioSection) {
+                    portfolioSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }
         }
     });
 });
+
 //#endregion
