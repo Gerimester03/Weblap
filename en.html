@@ -41,12 +41,24 @@
                 <li><a href="#client">Testmonials</a></li>
                 <li><a href="#quote">Quote</a></li>
                 <li><a href="#faq">Info</a></li>
-                <li class="nav__lang">
-                    <a href="index.html">HU</a>
-                    <span class="lang-separator">|</span>
-                    <a href="en.html" class="active">EN</a>
-                </li>
             </div>
+
+            <div class="nav__lang dropdown">
+                    <!-- Ez látszik alapból (Aktív nyelv) -->
+                    <div class="lang-toggle">
+                        <img src="Picture/Flags/en-flag.png" alt="EN" class="flag-icon">
+                        <i class="ri-arrow-down-s-line"></i> <!-- A kis lefelé mutató nyíl -->
+                    </div>
+
+                    <!-- Ez nyílik le (Választható nyelv) -->
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="index.html">
+                                <img src="Picture/Flags/hu-flag.png" alt="HU" class="flag-icon"> Hungary
+                            </a>
+                        </li>
+                    </ul>
+                </div>
         </nav>
     </header>
     <!-- #endregion -->
@@ -273,19 +285,19 @@
 
                 <!-- Név -->
                 <div class="quote__form_group">
-                    <label for="name">Név<span>*</span></label>
-                    <input type="text" id="name" name="name" placeholder="Teljes név" required>
+                    <label for="name">Name<span>*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Full name" required>
                 </div>
 
                 <!-- E-mail -->
                 <div class="quote__form_group">
-                    <label for="email">E-mail cím<span>*</span></label>
+                    <label for="email">E-mail address<span>*</span></label>
                     <input type="email" id="email" name="email" placeholder="email@example.com" required>
                 </div>
 
                 <!-- Telefonszám -->
                 <div class="quote__form_group">
-                    <label for="phone">Telefonszám<span>*</span></label>
+                    <label for="phone">Phone number<span>*</span></label>
 
 
                     <div class="phone__input">
@@ -323,71 +335,71 @@
 
                 <!-- Fotózás típusa -->
                 <div class="quote__form_group">
-                    <label for="service">Milyen fotózást szeretnél?<span>*</span></label>
+                    <label for="service">Type of Photography<span>*</span></label>
 
                     <select id="service" name="service" required>
                         <option value="" disabled selected>
-                            Válassz egy lehetőséget
+                            Select an option
                         </option>
 
                         <option value="portrait">
-                            Portréfotózás
+                            Portrait Photography
                         </option>
 
                         <option value="event">
-                            Rendezvény / Eseményfotózás
+                            Event Photography
                         </option>
 
                         <option value="wedding">
-                            Esküvői fotózás
+                            Wedding Photography
                         </option>
 
                         <option value="sport">
-                            Sportfotózás
+                            Sports Photography
                         </option>
 
                         <option value="product">
-                            Termékfotózás
+                            Product Photography
                         </option>
 
                         <option value="other">
-                            Egyéb
+                            Other
                         </option>
                     </select>
                 </div>
 
                 <!-- Dátum -->
                 <div class="quote__form_group">
-                    <label for="date">Tervezett időpont<span>*</span></label>
+                    <label for="date">Planned Date<span>*</span></label>
 
                     <input type="date" id="date" name="date" required>
                 </div>
 
                 <!-- Helyszín -->
                 <div class="quote__form_group">
-                    <label for="location">Helyszín<span>*</span></label>
+                    <label for="location">Location<span>*</span></label>
 
                     <input type="text" id="location" name="location" placeholder="Pl. Budapest, Szarvas..." required>
                 </div>
 
                 <!-- Üzenet -->
                 <div class="quote__form_group quote__form_group_full">
-                    <label for="message">Üzenet / Egyéb információ<span>*</span></label>
+                    <label for="message">Message / Additional Info<span>*</span></label>
 
                     <textarea id="message" name="message" rows="6" required
-                        placeholder="Írd le röviden, milyen fotózást szeretnél..."></textarea>
+                        placeholder="Briefly describe what kind of photoshoot you would like...."></textarea>
                 </div>
 
 
                 <!-- Csillaggal jelölt mezők kötelező kitölteni -->
                 <p class="quote__required">
-                    <span>*</span> A csillaggal jelölt mezők kitöltése kötelező.
+                    <span>*</span> Fields marked with an asterisk are required.
                 </p>
 
                 <!-- Gomb -->
                 <div class="quote__form_button">
                     <button type="submit" class="btn">
-                        ÁRAJÁNLAT KÉRÉSE
+                        REQUEST QUOTE
                     </button>
                 </div>
             </form>
