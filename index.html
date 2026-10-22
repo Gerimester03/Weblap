@@ -41,10 +41,22 @@
                 <li><a href="#client">Vélemények</a></li>
                 <li><a href="#quote">Árajánlatkérő</a></li>
                 <li><a href="#faq">Info</a></li>
-                <li class="nav__lang">
-                    <a href="index.html" class="active">HU</a>
-                    <span class="lang-separator">|</span>
-                    <a href="en.html">EN</a>
+                <!-- NYELVVÁLTÓ GOMB (Magyar oldalon) -->
+                <li class="nav__lang dropdown">
+                    <!-- Ez látszik alapból (Aktív nyelv) -->
+                    <div class="lang-toggle">
+                        <img src="Picture/Flags/hu-flag.png" alt="HU" class="flag-icon">
+                        <i class="ri-arrow-down-s-line"></i> <!-- A kis lefelé mutató nyíl -->
+                    </div>
+
+                    <!-- Ez nyílik le (Választható nyelv) -->
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="en.html">
+                                <img src="Picture/Flags/en-flag.png" alt="EN" class="flag-icon"> English
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </div>
         </nav>
